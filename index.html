@@ -240,6 +240,37 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2022/02/07/%E9%A2%98%E7%9B%AE%E5%A4%8D%E7%8E%B0/">
+                        题目复现
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        有关scanf的利用
+在通过scanf输入，当输入非常长的字符串的时候，即使我们使用setbuf()关闭了输入缓冲区，还是依旧会暂时申请一个large chunk来存储输入的字符串。 这样就会导致 malloc_consolidate的发生
+
+bui...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Feb 07 2022 17:29:23 GMT+0800">2022-02-07</span></span>
+        
+        
+    </div>
+
+    <a href="/2022/02/07/%E9%A2%98%E7%9B%AE%E5%A4%8D%E7%8E%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2022/02/06/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/">
                         格式化字符串
                     </a>
@@ -528,48 +559,6 @@ double free
     </div>
 
     <a href="/2021/11/06/houseoforange-hitcon-2016/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/11/02/ciscn-s-1/">
-                        CISCN_S_1
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        记录一下这题的思路exp借鉴别人的师傅修改。
-这里记录一下unlink的正确利用姿势；我们在连续申请了多个堆块后，选取一个目的chunk作为unlink的对象，从chunk的men开始，我们开始构造fake chunk，
-这里的fake chunk，...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Nov 02 2021 19:06:08 GMT+0800">2021-11-02</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/BUU/">BUU</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2021/11/02/ciscn-s-1/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
