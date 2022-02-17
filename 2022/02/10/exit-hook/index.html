@@ -220,7 +220,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>644 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>656 字</span>
         </span>
     
     
@@ -265,6 +265,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ifndef SHARED</span></span><br><span class="line"><span class="comment"># define EXTERN extern</span></span><br><span class="line"><span class="comment"># define GL(name) _##name</span></span><br><span class="line"><span class="comment">#else</span></span><br><span class="line"><span class="comment"># define EXTERN</span></span><br><span class="line"><span class="comment"># if IS_IN (rtld)</span></span><br><span class="line"><span class="comment">#  define GL(name) _rtld_local._##name</span></span><br><span class="line"><span class="comment"># else</span></span><br><span class="line"><span class="comment">#  define GL(name) _rtld_global._##name</span></span><br><span class="line"><span class="comment"># endif</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="利用方式"><a href="#利用方式" class="headerlink" title="利用方式"></a>利用方式</h2><p>直接在对应的libc版本中gdb进行动调，获取对应的偏移，将该位置填入onegadget即可</p>
+<p>在libc-2.23中，对应偏移为</p>
+<p>-0x5f0f48、-0x5f0f50</p>
 <p>在libc-2.27中，对应偏移为</p>
 <p>-0x61bf60、-0x61bf68</p>
 <p>在libc-2.31中，对应偏移为</p>
