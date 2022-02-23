@@ -9,8 +9,6 @@
     
     <title>
         
-            标签: PWN |
-        
         桥下少年
     </title>
     
@@ -59,7 +57,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/"
                             >
                                 首页
@@ -83,7 +81,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/tags"
                             >
                                 标签
@@ -122,7 +120,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/">首页</a>
                 </li>
             
@@ -137,7 +135,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/tags">标签</a>
                 </li>
             
@@ -166,114 +164,129 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="tag-container">
-        <div class="tag-name"><i class="fas fa-tag"></i>&nbsp;PWN
-        </div>
-        <div class="tag-post-list">
-            
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/02/06/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/"
-                        >格式化字符串</a>
-                        <span class="article-date">02-06</span>
-                    </li>
-                
-            </ul>
-        </section>
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2021</span>
-                <span class="archive-year-post-count">[9]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/26/ctfshow%E7%AD%BE%E9%80%80%E9%A2%98/"
-                        >ctfshow签退题</a>
-                        <span class="article-date">11-26</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/24/bins/"
-                        >Bins</a>
-                        <span class="article-date">11-24</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/23/IO-FILE/"
-                        >IO_FILE</a>
-                        <span class="article-date">11-23</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/17/top-chunk%E7%9A%84%E4%B8%80%E7%A7%8D%E5%88%A9%E7%94%A8/"
-                        >top chunk的一种利用</a>
-                        <span class="article-date">11-17</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/14/%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B/"
-                        >近期比赛记录</a>
-                        <span class="article-date">11-14</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/06/houseoforange-hitcon-2016/"
-                        >FSOP经典例题</a>
-                        <span class="article-date">11-06</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/02/ciscn-s-1/"
-                        >CISCN_S_1</a>
-                        <span class="article-date">11-02</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/01/%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95/"
-                        >倒叙输出flag</a>
-                        <span class="article-date">11-01</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2021/11/01/%E4%B8%9C%E5%8D%8E%E6%9D%AF%E9%83%A8%E5%88%86PWN/"
-                        >东华杯部分PWN</a>
-                        <span class="article-date">11-01</span>
-                    </li>
-                
-            </ul>
-        </section>
-    
-</div>
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
 
-        </div>
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/11/02/ciscn-s-1/">
+                        CISCN_S_1
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        记录一下这题的思路exp借鉴别人的师傅修改。
+这里记录一下unlink的正确利用姿势；我们在连续申请了多个堆块后，选取一个目的chunk作为unlink的对象，从chunk的men开始，我们开始构造fake chunk，
+这里的fake chunk，...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Nov 02 2021 19:06:08 GMT+0800">2021-11-02</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/BUU/">BUU</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
     </div>
 
-    <div class="tag-paginator">
+    <a href="/2021/11/02/ciscn-s-1/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/11/01/%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95/">
+                        倒叙输出flag
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        picoctf_2018_echooo小端序倒叙输出
+1234567891011121314from pwn import *p=process(&#x27;./1&#x27;)p=remote(&#x27;node4.buuoj.cn&#x27;,...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Nov 01 2021 19:14:25 GMT+0800">2021-11-01</span></span>
+        
+        
+    </div>
+
+    <a href="/2021/11/01/%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/11/01/%E4%B8%9C%E5%8D%8E%E6%9D%AF%E9%83%A8%E5%88%86PWN/">
+                        东华杯部分PWN
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Cpp1edit的时候没有进行size的大小判定，存在堆溢出。利用堆溢出进行overlapping来泄露libc，之后简单的free__hook写入system，最后释放掉binsh的堆块获取shell
+exp：
+123456789101112131...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Nov 01 2021 08:22:39 GMT+0800">2021-11-01</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/">比赛</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2021/11/01/%E4%B8%9C%E5%8D%8E%E6%9D%AF%E9%83%A8%E5%88%86PWN/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
         <div class="paginator">
     
         <a class="prev btn"
-           href="/tags/PWN/"
+           href="/page/2/"
         >上一页</a>
     
 
@@ -381,6 +394,7 @@
     
 
 </main>
+
 
 
 

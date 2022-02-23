@@ -288,7 +288,7 @@
 <p><img src="/2021/11/14/%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B/8.png"></p>
 <h3 id="writebook"><a href="#writebook" class="headerlink" title="writebook"></a>writebook</h3><blockquote>
 <p>就一个简简单单的offbynull的最基本的利用，特喵的没写出来是真的菜！！！</p>
-<p>offbynull达成overlaping，假如存在3个堆块，1(0x120)、2(0x70)、3(0x100)，其中1被释放，所以2的prev_size会被写入1的大小，然后编辑堆块2</p>
+<p>offbynull达成overlaping，假如存在3个堆块，1(0x120)、2(0x70)、3(0x100)，其中1被释放，而且1因为tcache bin被放慢了，所以1是unsorted bin，所以2的prev_size会被写入1的大小，然后编辑堆块2</p>
 <p>向堆块3的prev_size写入堆块2的大小，同时利用offbynull将堆块3的inuse改写为0，最后释放堆块3；这样就可以获得一个大堆块。</p>
 <p>然后申请一个0x130的堆块切割unsorted bin，这样0x130的堆块中会残留main_arena的地址，来泄露libc；然后释放0x70的堆块，因为0x70被放进了0x130里面，所以当0x70被释放后，我们通过编辑0x130堆块的内容来覆盖0x70堆块的fd指针为free_hook</p>
 <p><strong>如果存在UAF就更加简单了！</strong></p>
