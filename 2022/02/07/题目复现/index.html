@@ -265,7 +265,7 @@
 <ul>
 <li><p>首先是利用UAF来进行unsorted bin attack，将global_max_fast改为main_arena+96,在程序的最后会将两个堆块释放，因为global_max_fast被改成较大的数，所以两个堆块会被放入fast链表当中去；而fast链表有个下标的判断如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##define fastbin_index(sz) \</span></span><br><span class="line">    ((((unsigned <span class="built_in">int</span>) (sz)) &gt;&gt; (SIZE_SZ == <span class="number">8</span> ? <span class="number">4</span> : <span class="number">3</span>)) - <span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>然后知道fast链表头都存放在main_arena+16之后；根据计算_IO_list_all和main_arena+16的距离为0xa10，根据计算(((0xa10/8)+2&lt;&lt;4)可得出应该申请的堆块大小为0x1340</p>
+<li><p>然后知道fast链表头都存放在main_arena+16之后；根据计算_IO_list_all和main_arena+16的距离为0xa10，根据计算(((0xa10/8)+2&lt;&lt;4)可得出应该申请的堆块大小为0x1430</p>
 </li>
 <li><p>最后就是构造fake_io</p>
 </li>
