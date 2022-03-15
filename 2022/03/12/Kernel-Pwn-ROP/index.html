@@ -189,8 +189,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-03-15 18:53:00</span>
-        <span class="mobile">2022-03-15 18:53</span>
+        <span class="pc">2022-03-12 18:53:00</span>
+        <span class="mobile">2022-03-12 18:53</span>
     </span>
     
     
@@ -242,7 +242,7 @@
 <h3 id="内核中获得flag的方式"><a href="#内核中获得flag的方式" class="headerlink" title="内核中获得flag的方式"></a>内核中获得flag的方式</h3><p>提权，即是将当前进程的权限变更为root，一般调用 <code>commit_creds(prepare_kernel_cred(0))</code>完成提权然后用户态“着陆”起shell。</p>
 <h1 id="进程权限管理-这里照搬了arttnba3师傅的博客"><a href="#进程权限管理-这里照搬了arttnba3师傅的博客" class="headerlink" title="进程权限管理(这里照搬了arttnba3师傅的博客 )"></a>进程权限管理(这里照搬了arttnba3师傅的博客 )</h1><h2 id="进程描述符（process-descriptor）"><a href="#进程描述符（process-descriptor）" class="headerlink" title="进程描述符（process descriptor）"></a>进程描述符（process descriptor）</h2><p> 在内核中使用结构体 <code>task_struct</code> 表示一个进程，该结构体定义于内核源码<code>include/linux/sched.h</code>中，代码比较长就不在这里贴出了 </p>
 <p> 一个进程描述符的结构应当如下图所示： </p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/1.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/1.png"></p>
 <p>本篇我们主要关心其对于进程权限的管理</p>
 <p>注意到<code>task_struct</code>的源码中有如下代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Process credentials: */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Tracer&#x27;s credentials at attach: */</span></span><br><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">cred</span> __<span class="title">rcu</span>        *<span class="title">ptracer_cred</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Objective and real subjective task credentials (COW): */</span></span><br><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">cred</span> __<span class="title">rcu</span>        *<span class="title">real_cred</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Effective (overridable) subjective task credentials (COW): */</span></span><br><span class="line"><span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">cred</span> __<span class="title">rcu</span>        *<span class="title">cred</span>;</span></span><br></pre></td></tr></table></figure>
@@ -345,7 +345,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cpio -idv &lt; ./rootfs.cpio</span><br></pre></td></tr></table></figure>
 
 <h2 id="gdb调试exploit、内核"><a href="#gdb调试exploit、内核" class="headerlink" title="gdb调试exploit、内核"></a>gdb调试exploit、内核</h2><p>如果比赛题中给出了vmlinux文件，那么按照如下步骤解决</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/2.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/2.png"></p>
 <p>简单说明一下</p>
 <ol>
 <li>首先加载vmlinux</li>
@@ -371,21 +371,21 @@
 <p>这里还有些前置知识，就不一一做列举了。</p>
 </blockquote>
 <p>保护</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/protect.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/protect.png"></p>
 <p>init函数</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/init.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/init.png"></p>
 <p>创建了一个进程节点文件/proc/core，也是后续我们跟该内核模块通信的媒介</p>
 <p>ioctl函数</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/ioctl.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/ioctl.png"></p>
 <p>不同的参数可以分别调用三个操作，其中off是全局变量(.bss)</p>
 <p>read函数</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/read.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/read.png"></p>
 <p>在copy_to_user中，将v5[off]偏移处开始，长度为64的内容读入到了用户的参数a1当中去，而这里off我们能够控制，而程序开启了Canary，通过这里可以将canary泄露出来</p>
 <p>write函数</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/write.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/write.png"></p>
 <p>这里name是全局变量，在copy_from_user中，从用户输入a2中读取长度为a3到name当中去</p>
 <p>func函数</p>
-<p><img src="/2022/03/15/Kernel-Pwn-ROP/func.png"></p>
+<p><img src="/2022/03/12/Kernel-Pwn-ROP/func.png"></p>
 <p>在该函数中，qmemcpy，从name中读取长度为a1进入栈上变量v2当中去，这里a1由用户传入时是int64，而在qmemcpy当中值的类型变成了int16。</p>
 <h2 id="思路-以下来自Lantern师傅"><a href="#思路-以下来自Lantern师傅" class="headerlink" title="思路(以下来自Lantern师傅)"></a>思路(以下来自<a class="link" target="_blank" rel="noopener" href="https://lantern.cool/note-pwn-kernel-rop/#%E8%B0%83%E8%AF%95">Lantern<i class="fas fa-external-link-alt"></i></a>师傅)</h2><ol>
 <li>通过 ioctl 设置 off, 然后通过 core_read () leak 出 canary</li>
@@ -412,9 +412,9 @@
     <ul>
         <li>本文标题：Kernel Pwn ROP</li>
         <li>本文作者：LOLOLO</li>
-        <li>创建时间：2022-03-15 18:53:00</li>
+        <li>创建时间：2022-03-12 18:53:00</li>
         <li>
-            本文链接：https://lololo-pwn.github.io/2022/03/15/Kernel-Pwn-ROP/
+            本文链接：https://lololo-pwn.github.io/2022/03/12/Kernel-Pwn-ROP/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -438,14 +438,29 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/15/hello-world/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/03/15/House-Of-Storm/"
+                           href="/2022/03/11/House-Of-Kiwi/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">House Of Storm</span>
+                                <span class="post-nav-title-item">House Of Kiwi</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
