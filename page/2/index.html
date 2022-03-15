@@ -172,6 +172,93 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2022/03/15/setcontext/">
+                        setcontext
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        setcontext
+一般我们将malloc_hook或者free_hook设置为setcontext+53(2.29以下)或者setcontext+61(2.29及以上)
+2.29以上版本setcontext利用rdx，以下利用rdi
+
+利用手段一...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 15 2022 12:30:06 GMT+0800">2022-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Knowledge-points/">Knowledge_points</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/15/setcontext/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/03/15/exit-hook/">
+                        exit_hook
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        exit_hook先是exit调用
+
+跳转执行__run_exit_handlers函数，定义如下(2.31)
+123456789101112131415161718192021222324252627282930313233343536373839...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Mar 15 2022 10:07:40 GMT+0800">2022-03-15</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Knowledge-points/">Knowledge_points</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/03/15/exit-hook/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2022/02/09/LittleRedFlower/">
                         LittleRedFlower
                     </a>
@@ -384,91 +471,6 @@ bui...
     </div>
 
     <a href="/2021/11/26/ctfshow%E7%AD%BE%E9%80%80%E9%A2%98/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/11/24/bins/">
-                        Bins
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Bins(为了更好的学习Large bin attack)一、bin链的介绍
-bin是一个由struct chunk结构体组成的链表。
-前面介绍过，不同的chunk根据特点不同分为不同的chunk，为了将这些chunk进行分类的管理，glibc采用了...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Nov 24 2021 19:48:17 GMT+0800">2021-11-24</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Knowledge-points/">Knowledge_points</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2021/11/24/bins/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2021/11/23/IO-FILE/">
-                        IO_FILE
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        _IO_FILE结构体利用首先明确我们利用的_IO_FILE的结构是怎样的，代码如下，先是定义了_IO_list_all，定义如下
-1extern struct _IO_FILE_plus *_IO_list_all;
-
-很明显可以知道IO_list...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Nov 23 2021 20:27:38 GMT+0800">2021-11-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Knowledge-points/">Knowledge_points</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2021/11/23/IO-FILE/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>

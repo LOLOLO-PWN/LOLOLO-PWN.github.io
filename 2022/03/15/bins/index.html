@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="学习给自己的">
+    <meta name="description" content="一天一步，总会到的">
+    <meta name="author" content="LOLOLO">
+    
+    <title>
+        
+            Bins |
+        
+        桥下少年
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/1.jpg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"lololo-pwn.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#339966","avatar":"/images/1.jpg","favicon":"/images/1.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不要留恋过去,空想未来,专注当下。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                桥下少年
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Bins</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/1.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">LOLOLO</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-15 13:00:45</span>
+        <span class="mobile">2022-03-15 13:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Knowledge-points/">Knowledge_points</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.8k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>11 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Bins-为了更好的学习Large-bin-attack"><a href="#Bins-为了更好的学习Large-bin-attack" class="headerlink" title="Bins(为了更好的学习Large bin attack)"></a>Bins(为了更好的学习Large bin attack)</h1><h2 id="一、bin链的介绍"><a href="#一、bin链的介绍" class="headerlink" title="一、bin链的介绍"></a>一、bin链的介绍</h2><ul>
+<li>bin是一个由struct chunk结构体组成的链表。</li>
+<li>前面介绍过，不同的chunk根据特点不同分为不同的chunk，为了将这些chunk进行分类的管理，glibc采用了bin链这种方式管理不同的chunk。</li>
+<li>不同的bin链是由arena管理的。</li>
+<li>bin链中的chunk均为free chunk。</li>
+</ul>
+<h2 id="二、bin链分类"><a href="#二、bin链分类" class="headerlink" title="二、bin链分类"></a>二、bin链分类</h2><ul>
+<li>fast bin，单链表，除了fast bin其他都是循环双链表</li>
+<li>unsorted bin</li>
+<li>small bin</li>
+<li>large bin</li>
+</ul>
+<h2 id="三、bin链的保存-struct-malloc-state结构体"><a href="#三、bin链的保存-struct-malloc-state结构体" class="headerlink" title="三、bin链的保存(struct malloc_state结构体)"></a>三、bin链的保存(struct malloc_state结构体)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">malloc_state</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="comment">/* Serialize access.  */</span></span><br><span class="line">  <span class="keyword">mutex_t</span> mutex;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Flags (formerly in max_fast).  */</span></span><br><span class="line">  <span class="keyword">int</span> flags;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Fastbins */</span></span><br><span class="line">  mfastbinptr fastbinsY[NFASTBINS];</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Base of the topmost chunk -- not otherwise kept in a bin */</span></span><br><span class="line">  mchunkptr top;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* The remainder from the most recent split of a small request */</span></span><br><span class="line">  mchunkptr last_remainder;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Normal bins packed as described above */</span></span><br><span class="line">  mchunkptr bins[NBINS * <span class="number">2</span> - <span class="number">2</span>];             #NBINS=<span class="number">128</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Bitmap of bins */</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> binmap[BINMAPSIZE];</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Linked list */</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">malloc_state</span> *<span class="title">next</span>;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Linked list for free arenas.  Access to this field is serialized</span></span><br><span class="line"><span class="comment">     by free_list_lock in arena.c.  */</span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">malloc_state</span> *<span class="title">next_free</span>;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Number of threads attached to this arena.  0 if the arena is on</span></span><br><span class="line"><span class="comment">     the free list.  Access to this field is serialized by</span></span><br><span class="line"><span class="comment">     free_list_lock in arena.c.  */</span></span><br><span class="line">  INTERNAL_SIZE_T attached_threads;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Memory allocated from the system in this arena.  */</span></span><br><span class="line">  INTERNAL_SIZE_T system_mem;</span><br><span class="line">  INTERNAL_SIZE_T max_system_mem;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>fastbinY数组：</strong>大小为10。记录的是fast bin链。</li>
+<li><strong>bins数组：</strong>大小为126。记录的是unsorted bin（1）、small bin（2<del>63）、large bin链（64</del>126）。</li>
+</ul>
+<h2 id="四、Fast-bin"><a href="#四、Fast-bin" class="headerlink" title="四、Fast bin"></a>四、Fast bin</h2><ul>
+<li><strong>概念：</strong>chunk的大小在32字节~128字节（0x20-0x80）的chunk称为“fast chunk”（大小不是malloc时的大小，而是在内存中struct malloc_chunk的大小，包含前2个成员）。</li>
+<li>fast bin链表的个数为10个。</li>
+<li>不会对free chunk进行合并：鉴于设计fast bin的初衷就是进行快速的小内存分配和释放，因此系统将属于fast bin的chunk的PREV_INUSE位总是设置为1，这样即使当fast bin中有某个chunk同一个free chunk相邻的时候，系统也不会进行自动合并操作，而是保留两者。虽然这样做可能会造成额外的碎片化问题，但瑕不掩瑜。</li>
+</ul>
+<blockquote>
+<h3 id="fastbinsY数组存储fastbins的规则"><a href="#fastbinsY数组存储fastbins的规则" class="headerlink" title="fastbinsY数组存储fastbins的规则"></a>fastbinsY数组存储fastbins的规则</h3><ul>
+<li>每个fast bin链表都是单链表（使用fd指针）。因此，fast bin中无论是添加还是移除fast chunk，都是对“链表尾”进行操作，而不会对某个中间的fast chunk进行操作。</li>
+<li>单个fastbin链表中的chunk大小都是相同的，各个fastbin链表中的chunk大小是不同的。</li>
+<li>fastbinY数组中的每个bin链表的排序，是按照链表元素的大小进行排序的。数组的第一个元素的fast bin链表中的每个chunk的大小是32字节的，数组的第二个元素的fast bin链表中的每个chunk的大小是48字节的……每个元素都比前面的fast bin链大16字节，以此类推进行排序。</li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="链表索引宏定义：（fastbin-index）"><a href="#链表索引宏定义：（fastbin-index）" class="headerlink" title="链表索引宏定义：（fastbin_index）"></a>链表索引宏定义：（fastbin_index）</h3><ul>
+<li><strong>功能：</strong>通过此宏能判断某一个fastchunk属于哪一个fastbin链表。</li>
+<li><strong>参数：</strong>某一个chunk的大小。</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fastbin_index(sz) \ </span></span><br><span class="line">  ((((<span class="keyword">unsigned</span> <span class="keyword">int</span>)(sz)) &gt;&gt; (SIZE_SZ == <span class="number">8</span> ? <span class="number">4</span> : <span class="number">3</span>)) - <span class="number">2</span>) </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="malloc操作与fastbins的初始化："><a href="#malloc操作与fastbins的初始化：" class="headerlink" title="malloc操作与fastbins的初始化："></a>malloc操作与fastbins的初始化：</h3><ul>
+<li>当应用层通过malloc函数第一次申请的chunk属于16字节~80字节之间时，因为初始化的时候fast bin支持的最大内存大小以及所有fast bin链表都是空的，所以它也不会交由fast bin来处理，而是向下传递交由small bin来处理，如果small bin也为空的话就交给unsorted bin处理。</li>
+<li><strong>fast bin如何进行初始化</strong><ul>
+<li>当我们第一次调用malloc(fast bin)的时候，系统执行_int_malloc函数，该函数首先会发现当前fast bin为空，就转交给small bin处理，进而又发现small bin 也为空，就调用malloc_consolidate函数对malloc_state结构体进行初始化。malloc_consolidate函数主要完成以下几个功能： <ul>
+<li>a.首先判断当前malloc_state结构体中的fast bin是否为空，如果为空就说明整个malloc_state都没有完成初始化，需要对malloc_state进行初始化。</li>
+<li>b.malloc_state的初始化操作由函数malloc_init_state(av)完成，该函数先初始化除fast bin之外的所有的bins，再初始化fast bins。</li>
+</ul>
+</li>
+<li>那么当再次执行malloc(fast chunk)函数的时候，此时fast bin相关数据不为空了，就可以使用fast bin。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>这个操作很简单，主要分为两步：先通过chunksize函数根据传入的地址指针获取该指针对应的chunk的大小；然后根据这个chunk大小获取该chunk所属的fast bin，然后再将此chunk添加到该fast bin的链尾即可。整个操作都是在_int_free函数中完成。</li>
+</ul>
+</blockquote>
+<h2 id="五、Unsorted-bin"><a href="#五、Unsorted-bin" class="headerlink" title="五、Unsorted bin"></a>五、Unsorted bin</h2><ul>
+<li><strong>何时使用：</strong>当不存在tcache时，只要释放的堆块大于0x80，就会首先放入unsorted bin中去。</li>
+<li><strong>特性</strong><ul>
+<li>unsorted bin只有一个</li>
+<li>unsorted bin是一个由free chunks组成的循环双链表。</li>
+<li>在unsorted bin中，对chunk的大小并没有限制，任何大小的chunk都可以归属到unsorted bin中。</li>
+<li>unsortedbin采用的遍历顺序是FIFO，即是先进先出。</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、Small-bin"><a href="#六、Small-bin" class="headerlink" title="六、Small bin"></a>六、Small bin</h2><ul>
+<li><strong>概念：</strong>小于1024字节（0x400）的chunk称之为small chunk，small bin就是用于管理small chunk的。</li>
+<li>small bin链表的个数为62个。</li>
+</ul>
+<blockquote>
+<h3 id="Small-Bin链表的特性"><a href="#Small-Bin链表的特性" class="headerlink" title="Small Bin链表的特性"></a>Small Bin链表的特性</h3><ul>
+<li><p>每个smallbin也是一个由对应free chunk组成的循环双链表。</p>
+</li>
+<li><p><strong>small bin采用FIFO(先入先出)算法：</strong>内存释放操作就将新释放的chunk添加到链表的front end(前端)，分配操作就从链表的rear end(尾端)中获取chunk。</p>
+</li>
+<li><p>单个smallbin链表中的chunk大小都是相同的，各个smallbin链表中的chunk大小是不同的，跟fastbinsY数组存储fastbin链的原理是相同的。</p>
+</li>
+<li><p>bins数组存储small bin链时：第一个small bin链中chunk的大小为32字节，后续每个small bin中chunk的大小依次增加两个机器字长（32位相差8字节，64位相差16字节）…….以此类推，跟fastbinsY数组存储fastbin链的原理是相同的（用下图表示）。</p>
+</li>
+<li><p><strong>bin链存储的大小与数组下标的关系：</strong>chun_size=2 * SIZE_SZ * index。</p>
+<p><img src="/2022/03/15/bins/small.png"></p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="malloc操作与small-bin的初始化"><a href="#malloc操作与small-bin的初始化" class="headerlink" title="malloc操作与small bin的初始化"></a>malloc操作与small bin的初始化</h3><ul>
+<li><p>类似于fast bins，最初所有的small bin都是空的，因此在对这些small bin完成初始化之前，即使用户请求的内存大小属于small chunk也不会交由small bin进行处理，而是交由unsorted bin处理。</p>
+</li>
+<li><p>如果unsorted bin也不能处理的话，glibc  malloc就依次遍历后续的所有bins，找出第一个满足要求的bin，如果所有的bin都不满足的话，就转而使用top chunk，如果top  chunk大小不够，那么就扩充top chunk，这样就一定能满足需求了。</p>
+</li>
+<li><p>注意遍历后续bins以及之后的操作同样被large bin所使用，因此，将这部分内容放到large bin的malloc操作中加以介绍。</p>
+</li>
+<li><p>那么glibc malloc是如何初始化这些bins的呢？因为这些bin属于malloc_state结构体，所以在初始化malloc_state的时候就会对这些bin进行初始化，代码如下：    </p>
+<ul>
+<li><p>将bins数组中的第一个成员索引值设置为了1，而不是我们常用的0(在bin_at宏中，自动将i进行了减1处理)。</p>
+</li>
+<li><p>从下面代码可以看出在初始化的时候glibc malloc将所有bin的指针都指向了自己——这就代表这些bin都是空的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span></span></span><br><span class="line"><span class="function"><span class="title">malloc_init_state</span> <span class="params">(mstate av)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    mbinptr bin;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Establish circular links for normal bins */</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; NBINS; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        bin = bin_at (av, i);</span><br><span class="line">        bin-&gt;fd = bin-&gt;bk = bin;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>过后，当再次调用malloc(small chunk)的时候，如果该chunk size对应的small bin不为空，就从该small bin链表中取得small chunk给malloc使用。</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="free操作"><a href="#free操作" class="headerlink" title="free操作"></a>free操作</h3><ul>
+<li>small的free比较特殊。当释放small chunk的时候，先检查该chunk相邻的chunk是否为free，如果是的话就进行合并操作：将这些chunks合并成新的chunk，然后将它们从small bin中移除，最后将新的chunk添加到unsorted bin中，之后unsorted bin进行整理再添加到对应的bin链上（后面会有图介绍）。</li>
+</ul>
+</blockquote>
+<h2 id="七、Large-bin"><a href="#七、Large-bin" class="headerlink" title="七、Large bin"></a>七、Large bin</h2><ul>
+<li><strong>概念：</strong>大于等于1024字节（0x400）的chunk称之为large chunk，large bin就是用于管理这些largechunk的。</li>
+<li>large bin链表的个数为63个，被分为6组。</li>
+<li>largechunk使用fd_nextsize、bk_nextsize连接起来的。</li>
+</ul>
+<blockquote>
+<h3 id="Large-Bin链表的特性"><a href="#Large-Bin链表的特性" class="headerlink" title="Large Bin链表的特性"></a>Large Bin链表的特性</h3><ul>
+<li><p>同一个largebin中每个chunk的大小可以不一样，这些chunk根据一定的范围存储在一个larbin链表中。</p>
+</li>
+<li><p>large chunk可以添加、删除在large bin的任何一个位置。</p>
+</li>
+<li><p>在这63个largebins中：第一组的32个largebin链依次以64字节步长为间隔，即第一个largebin链中chunksize为1024-1087字节，第二个large bin中chunk size为1088~1151字节。第二组的16个largebin链依次以512字节步长为间隔；第三组的8个largebin链以步长4096为间隔；第四组的4个largebin链以32768字节为间隔；第五组的2个largebin链以262144字节为间隔；最后一组的largebin链中的chunk大小无限制。</p>
+<p><img src="/2022/03/15/bins/large.png"></p>
+</li>
+<li><p>在同一个largebin中：每个chunk的大小不一定相同，因此为了加快内存分配和释放的速度，就将同一个largebin中的所有chunk按照chunksize进行从大到小的排列：最大的chunk放在一个链表的front end，最小的chunk放在rear end；相同大小的chunk按照最近使用顺序排序。</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="链表索引宏定义：（largebin-index）"><a href="#链表索引宏定义：（largebin-index）" class="headerlink" title="链表索引宏定义：（largebin_index）"></a>链表索引宏定义：（largebin_index）</h3><ul>
+<li><p>参数为链表能存储的chunk大小，宏定义中有简介调用其他宏定义。</p>
+</li>
+<li><p>例如：第一个largebin的起始大小为1024，那么1024&gt;&gt;6=16，所以其在bins数组中的下标为48+16=64。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> largebin_index_64(sz)                                                \</span></span><br><span class="line"><span class="meta">  (((((unsigned long) (sz)) &gt;&gt; 6) <span class="meta-string">&lt;= 48) ?  48 + (((unsigned long) (sz)) &gt;</span>&gt; 6) :\</span></span><br><span class="line"><span class="meta">   ((((unsigned long) (sz)) &gt;&gt; 9) <span class="meta-string">&lt;= 20) ?  91 + (((unsigned long) (sz)) &gt;</span>&gt; 9) :\</span></span><br><span class="line"><span class="meta">   ((((unsigned long) (sz)) &gt;&gt; 12) <span class="meta-string">&lt;= 10) ? 110 + (((unsigned long) (sz)) &gt;</span>&gt; 12) :\</span></span><br><span class="line"><span class="meta">   ((((unsigned long) (sz)) &gt;&gt; 15) <span class="meta-string">&lt;= 4) ? 119 + (((unsigned long) (sz)) &gt;</span>&gt; 15) :\</span></span><br><span class="line"><span class="meta">   ((((unsigned long) (sz)) &gt;&gt; 18) <span class="meta-string">&lt;= 2) ? 124 + (((unsigned long) (sz)) &gt;</span>&gt; 18) :\</span></span><br><span class="line"><span class="meta">   126)</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> largebin_index(sz) \</span></span><br><span class="line"><span class="meta">  (SIZE_SZ == 8 ? largebin_index_64 (sz)                                     \</span></span><br><span class="line"><span class="meta">   : MALLOC_ALIGNMENT == 16 ? largebin_index_32_big (sz)                     \</span></span><br><span class="line"><span class="meta">   : largebin_index_32 (sz))</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="malloc操作与large-bin的初始化"><a href="#malloc操作与large-bin的初始化" class="headerlink" title="malloc操作与large bin的初始化"></a>malloc操作与large bin的初始化</h3><ul>
+<li>初始化完成之前的操作类似于small bin。</li>
+<li>下面讨论large bins初始化完成之后的操作：    <ul>
+<li>首先确定用户请求的大小属于哪一个large bin，然后判断该large bin中最大的chunk的size是否大于用户请求的size(只需要对比链表中front end的size即可)。如果大于，就从rear end开始遍历该large bin，找到第一个size相等或接近的chunk，分配给用户。如果该chunk大于用户请求的size的话，就将该chunk拆分为两个chunk：前者返回给用户，且size等同于用户请求的size；剩余的部分做为一个新的chunk添加到unsorted bin中。</li>
+<li>如果该large bin中最大的chunk的size小于用户请求的size的话，那么就依次查看后续的large bin中是否有满足需求的chunk，不过需要注意的是鉴于bin的个数较多(不同bin中的chunk极有可能在不同的内存页中)，如果按照上一段中介绍的方法进行遍历的话(即遍历每个bin中的chunk)，就可能会发生多次内存页中断操作，进而严重影响检索速度，所以glibc malloc设计了Binmap结构体来帮助提高bin-by-bin检索的速度。Binmap记录了各个bin中是否为空，通过bitmap可以避免检索一些空的bin。如果通过binmap找到了下一个非空的large bin的话，就按照上一段中的方法分配chunk，否则就使用top chunk来分配合适的内存。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>free操作类似于small bin</strong></p>
+</blockquote>
+<p><strong>这篇文章几乎百分百照搬<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41453285/article/details/96865321">董哥的黑板报<i class="fas fa-external-link-alt"></i></a>的<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41453285/article/details/96865321">文章<i class="fas fa-external-link-alt"></i></a></strong></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Bins</li>
+        <li>本文作者：LOLOLO</li>
+        <li>创建时间：2022-03-15 13:00:45</li>
+        <li>
+            本文链接：https://lololo-pwn.github.io/2022/03/15/bins/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/PWN/">#PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/15/Large-bin-attack/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Large bin attack</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/15/setcontext/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">setcontext</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '2XOGNqHIX6wo0G39qpF2OD4D-gzGzoHsz',
+                    appKey: 'IiqSl8rLkJTPne7xAwnsukGL',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '放马过来!',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'LOLOLO';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">LOLOLO</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bins-%E4%B8%BA%E4%BA%86%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%AD%A6%E4%B9%A0Large-bin-attack"><span class="nav-number">1.</span> <span class="nav-text">Bins(为了更好的学习Large bin attack)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81bin%E9%93%BE%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">一、bin链的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81bin%E9%93%BE%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">二、bin链分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81bin%E9%93%BE%E7%9A%84%E4%BF%9D%E5%AD%98-struct-malloc-state%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">1.3.</span> <span class="nav-text">三、bin链的保存(struct malloc_state结构体)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Fast-bin"><span class="nav-number">1.4.</span> <span class="nav-text">四、Fast bin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fastbinsY%E6%95%B0%E7%BB%84%E5%AD%98%E5%82%A8fastbins%E7%9A%84%E8%A7%84%E5%88%99"><span class="nav-number">1.4.1.</span> <span class="nav-text">fastbinsY数组存储fastbins的规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%B4%A2%E5%BC%95%E5%AE%8F%E5%AE%9A%E4%B9%89%EF%BC%9A%EF%BC%88fastbin-index%EF%BC%89"><span class="nav-number">1.4.2.</span> <span class="nav-text">链表索引宏定义：（fastbin_index）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc%E6%93%8D%E4%BD%9C%E4%B8%8Efastbins%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%9A"><span class="nav-number">1.4.3.</span> <span class="nav-text">malloc操作与fastbins的初始化：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81Unsorted-bin"><span class="nav-number">1.5.</span> <span class="nav-text">五、Unsorted bin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81Small-bin"><span class="nav-number">1.6.</span> <span class="nav-text">六、Small bin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Small-Bin%E9%93%BE%E8%A1%A8%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.6.1.</span> <span class="nav-text">Small Bin链表的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc%E6%93%8D%E4%BD%9C%E4%B8%8Esmall-bin%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.6.2.</span> <span class="nav-text">malloc操作与small bin的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free%E6%93%8D%E4%BD%9C"><span class="nav-number">1.6.3.</span> <span class="nav-text">free操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81Large-bin"><span class="nav-number">1.7.</span> <span class="nav-text">七、Large bin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Large-Bin%E9%93%BE%E8%A1%A8%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.7.1.</span> <span class="nav-text">Large Bin链表的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%B4%A2%E5%BC%95%E5%AE%8F%E5%AE%9A%E4%B9%89%EF%BC%9A%EF%BC%88largebin-index%EF%BC%89"><span class="nav-number">1.7.2.</span> <span class="nav-text">链表索引宏定义：（largebin_index）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#malloc%E6%93%8D%E4%BD%9C%E4%B8%8Elarge-bin%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.7.3.</span> <span class="nav-text">malloc操作与large bin的初始化</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

